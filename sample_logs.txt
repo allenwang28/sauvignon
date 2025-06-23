@@ -1,0 +1,185 @@
+Config: Config(num_generators=2, num_scorers=4, num_multi_turn_steps=2, num_train_steps=5, train_batch_size=2, gp=1, lp=1, sp=1)
+[PromptGenerator] putting prompt 0 to generator 1
+[PromptGenerator] putting prompt 1 to generator 0
+[PromptGenerator] putting prompt 2 to generator 1
+[PromptGenerator] putting prompt 3 to generator 0
+[PromptGenerator] putting prompt 4 to generator 1
+[PromptGenerator] putting prompt 5 to generator 0
+[PromptGenerator] putting prompt 6 to generator 1
+[PromptGenerator] putting prompt 7 to generator 0
+[PromptGenerator] putting prompt 8 to generator 1
+[PromptGenerator] putting prompt 9 to generator 0
+[PromptGenerator] putting prompt 10 to generator 1
+[PromptGenerator] putting prompt 11 to generator 0
+[PromptGenerator] putting prompt 12 to generator 1
+[PromptGenerator] putting prompt 13 to generator 0
+[PromptGenerator] putting prompt 14 to generator 1
+[PromptGenerator] putting prompt 15 to generator 0
+[PromptGenerator] putting prompt 16 to generator 1
+[Trainer] Published weights for version 0
+[Generator-0] Starting loop
+[Generator-0] Updating weights to [0]
+[Generator-1] Starting loop
+[Generator-1] Updating weights to [0]
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting prompt 16 to generator 0
+[PromptGenerator] putting prompt 17 to generator 1
+[PromptGenerator] putting prompt 18 to generator 0
+[Generator-0] generated g[r=0-w[0]-p0] with version 0 on turn 0.
+[Scorer-0] Scored s(r0=g[r=0-w[0]-p0]), returning to generator
+[Generator-1] generated g[r=0-w[0]-p1] with version 0 on turn 0.
+[Scorer-1] Scored s(r0=g[r=0-w[0]-p1]), returning to generator
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting prompt 18 to generator 1
+[Generator-0] generated g[r=0-w[0]-p2] with version 0 on turn 0.
+[Scorer-2] Scored s(r0=g[r=0-w[0]-p2]), returning to generator
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting prompt 18 to generator 0
+[Generator-1] generated g[r=0-w[0]-p3] with version 0 on turn 0.
+[Scorer-0] Scored s(r0=g[r=0-w[0]-p3]), returning to generator
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting prompt 18 to generator 1
+[Generator-1] generated g[r=0-w[0]-ps(r0=g[r=0-w[0]-p1])] with version 0 on turn 1.
+[Scorer-1] Scored s(r0=g[r=0-w[0]-ps(r0=g[r=0-w[0]-p1])]), returning to generator
+[Generator-0] generated g[r=0-w[0]-ps(r0=g[r=0-w[0]-p0])] with version 0 on turn 1.
+[Scorer-2] Scored s(r0=g[r=0-w[0]-ps(r0=g[r=0-w[0]-p0])]), returning to generator
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting prompt 18 to generator 0
+[Generator-1] generated g[r=0-w[0]-ps(r0=g[r=0-w[0]-p3])] with version 0 on turn 1.
+[Scorer-3] Scored s(r0=g[r=0-w[0]-ps(r0=g[r=0-w[0]-p3])]), returning to generator
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting prompt 18 to generator 1
+[Generator-0] generated g[r=0-w[0]-ps(r0=g[r=0-w[0]-p2])] with version 0 on turn 1.
+[Scorer-2] Scored s(r0=g[r=0-w[0]-ps(r0=g[r=0-w[0]-p2])]), returning to generator
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting prompt 18 to generator 0
+[Generator-1] generated g[r=0-w[0]-ps(r0=g[r=0-w[0]-ps(r0=g[r=0-w[0]-p1])])] with version 0 on turn 2.
+[Scorer-0] Scored s(r0=g[r=0-w[0]-ps(r0=g[r=0-w[0]-ps(r0=g[r=0-w[0]-p1])])]), pushing to learner
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting prompt 18 to generator 1
+[Generator-0] generated g[r=0-w[0]-ps(r0=g[r=0-w[0]-ps(r0=g[r=0-w[0]-p0])])] with version 0 on turn 2.
+[Scorer-1] Scored s(r0=g[r=0-w[0]-ps(r0=g[r=0-w[0]-ps(r0=g[r=0-w[0]-p0])])]), pushing to learner
+[Trainer,step=0] Trained policy 1 on batch (['s(r0=g[r=0-w[0]-ps(r0=g[r=0-w[0]-ps(r0=g[r=0-w[0]-p1])])])', 's(r0=g[r=0-w[0]-ps(r0=g[r=0-w[0]-ps(r0=g[r=0-w[0]-p0])])])']). Staleness: [0, 0]
+[Trainer] Published weights for version 1
+[Generator-1] generated g[r=0-w[0]-ps(r0=g[r=0-w[0]-ps(r0=g[r=0-w[0]-p3])])] with version 0 on turn 2.
+[Generator-1] Updating weights to [1]
+[Scorer-3] Scored s(r0=g[r=0-w[0]-ps(r0=g[r=0-w[0]-ps(r0=g[r=0-w[0]-p3])])]), pushing to learner
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting prompt 18 to generator 0
+[PromptGenerator] putting prompt 19 to generator 1
+[PromptGenerator] putting prompt 20 to generator 0
+[PromptGenerator] putting prompt 21 to generator 1
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting prompt 21 to generator 0
+[Generator-0] generated g[r=0-w[0]-ps(r0=g[r=0-w[0]-ps(r0=g[r=0-w[0]-p2])])] with version 0 on turn 2.
+[Generator-0] Updating weights to [1]
+[Scorer-0] Scored s(r0=g[r=0-w[0]-ps(r0=g[r=0-w[0]-ps(r0=g[r=0-w[0]-p2])])]), pushing to learner
+[Generator-1] generated g[r=0-w[1]-p5] with version 1 on turn 0.
+[Scorer-1] Scored s(r0=g[r=0-w[1]-p5]), returning to generator
+[Trainer,step=1] Trained policy 2 on batch (['s(r0=g[r=0-w[0]-ps(r0=g[r=0-w[0]-ps(r0=g[r=0-w[0]-p3])])])', 's(r0=g[r=0-w[0]-ps(r0=g[r=0-w[0]-ps(r0=g[r=0-w[0]-p2])])])']). Staleness: [1, 1]
+[Trainer] Published weights for version 2
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting prompt 21 to generator 1
+[PromptGenerator] putting prompt 22 to generator 0
+[Generator-0] generated g[r=0-w[1]-p4] with version 1 on turn 0.
+[Generator-0] Updating weights to [2]
+[Scorer-2] Scored s(r0=g[r=0-w[1]-p4]), returning to generator
+[Generator-1] generated g[r=0-w[1]-p7] with version 1 on turn 0.
+[Generator-1] Updating weights to [2]
+[Scorer-3] Scored s(r0=g[r=0-w[1]-p7]), returning to generator
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting prompt 22 to generator 1
+[Generator-0] generated g[r=0-w[2]-p6] with version 2 on turn 0.
+[Scorer-0] Scored s(r0=g[r=0-w[2]-p6]), returning to generator
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting prompt 22 to generator 0
+[Generator-1] generated g[r=0-w[2]-ps(r0=g[r=0-w[1]-p5])] with version 2 on turn 1.
+[Scorer-3] Scored s(r0=g[r=0-w[2]-ps(r0=g[r=0-w[1]-p5])]), returning to generator
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting prompt 22 to generator 1
+[Generator-0] generated g[r=0-w[2]-ps(r0=g[r=0-w[1]-p4])] with version 2 on turn 1.
+[Scorer-2] Scored s(r0=g[r=0-w[2]-ps(r0=g[r=0-w[1]-p4])]), returning to generator
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting prompt 22 to generator 0
+[Generator-1] generated g[r=0-w[2]-ps(r0=g[r=0-w[1]-p7])] with version 2 on turn 1.
+[Scorer-3] Scored s(r0=g[r=0-w[2]-ps(r0=g[r=0-w[1]-p7])]), returning to generator
+[Generator-0] generated g[r=0-w[2]-ps(r0=g[r=0-w[2]-p6])] with version 2 on turn 1.
+[Scorer-0] Scored s(r0=g[r=0-w[2]-ps(r0=g[r=0-w[2]-p6])]), returning to generator
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting prompt 22 to generator 1
+[Generator-1] generated g[r=0-w[2]-ps(r0=g[r=0-w[2]-ps(r0=g[r=0-w[1]-p5])])] with version 2 on turn 2.
+[Scorer-1] Scored s(r0=g[r=0-w[2]-ps(r0=g[r=0-w[2]-ps(r0=g[r=0-w[1]-p5])])]), pushing to learner
+[Generator-0] generated g[r=0-w[2]-ps(r0=g[r=0-w[2]-ps(r0=g[r=0-w[1]-p4])])] with version 2 on turn 2.
+[Scorer-2] Scored s(r0=g[r=0-w[2]-ps(r0=g[r=0-w[2]-ps(r0=g[r=0-w[1]-p4])])]), pushing to learner
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting prompt 22 to generator 0
+[PromptGenerator] putting prompt 23 to generator 1
+[PromptGenerator] putting prompt 24 to generator 0
+[Trainer,step=2] Trained policy 3 on batch (['s(r0=g[r=0-w[2]-ps(r0=g[r=0-w[2]-ps(r0=g[r=0-w[1]-p5])])])', 's(r0=g[r=0-w[2]-ps(r0=g[r=0-w[2]-ps(r0=g[r=0-w[1]-p4])])])']). Staleness: [0, 0]
+[Trainer] Published weights for version 3
+[Generator-0] generated g[r=0-w[2]-ps(r0=g[r=0-w[2]-ps(r0=g[r=0-w[2]-p6])])] with version 2 on turn 2.
+[Generator-0] Updating weights to [3]
+[Scorer-3] Scored s(r0=g[r=0-w[2]-ps(r0=g[r=0-w[2]-ps(r0=g[r=0-w[2]-p6])])]), pushing to learner
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting prompt 24 to generator 1
+[PromptGenerator] putting prompt 25 to generator 0
+[Generator-1] generated g[r=0-w[2]-ps(r0=g[r=0-w[2]-ps(r0=g[r=0-w[1]-p7])])] with version 2 on turn 2.
+[Generator-1] Updating weights to [3]
+[Scorer-0] Scored s(r0=g[r=0-w[2]-ps(r0=g[r=0-w[2]-ps(r0=g[r=0-w[1]-p7])])]), pushing to learner
+[Trainer,step=3] Trained policy 4 on batch (['s(r0=g[r=0-w[2]-ps(r0=g[r=0-w[2]-ps(r0=g[r=0-w[2]-p6])])])', 's(r0=g[r=0-w[2]-ps(r0=g[r=0-w[2]-ps(r0=g[r=0-w[1]-p7])])])']). Staleness: [1, 1]
+[Trainer] Published weights for version 4
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting prompt 25 to generator 1
+[Generator-1] generated g[r=0-w[3]-p9] with version 3 on turn 0.
+[Generator-1] Updating weights to [4]
+[Scorer-1] Scored s(r0=g[r=0-w[3]-p9]), returning to generator
+[Generator-0] generated g[r=0-w[3]-p8] with version 3 on turn 0.
+[Generator-0] Updating weights to [4]
+[Scorer-3] Scored s(r0=g[r=0-w[3]-p8]), returning to generator
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting prompt 25 to generator 0
+[PromptGenerator] putting prompt 26 to generator 1
+[Generator-1] generated g[r=0-w[4]-p11] with version 4 on turn 0.
+[Scorer-0] Scored s(r0=g[r=0-w[4]-p11]), returning to generator
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting prompt 26 to generator 0
+[Generator-0] generated g[r=0-w[4]-p10] with version 4 on turn 0.
+[Scorer-2] Scored s(r0=g[r=0-w[4]-p10]), returning to generator
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting prompt 26 to generator 1
+[Generator-1] generated g[r=0-w[4]-ps(r0=g[r=0-w[3]-p9])] with version 4 on turn 1.
+[Scorer-1] Scored s(r0=g[r=0-w[4]-ps(r0=g[r=0-w[3]-p9])]), returning to generator
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting prompt 26 to generator 0
+[Generator-0] generated g[r=0-w[4]-ps(r0=g[r=0-w[3]-p8])] with version 4 on turn 1.
+[Scorer-1] Scored s(r0=g[r=0-w[4]-ps(r0=g[r=0-w[3]-p8])]), returning to generator
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting prompt 26 to generator 1
+[Generator-1] generated g[r=0-w[4]-ps(r0=g[r=0-w[4]-p11])] with version 4 on turn 1.
+[Scorer-2] Scored s(r0=g[r=0-w[4]-ps(r0=g[r=0-w[4]-p11])]), returning to generator
+[Generator-0] generated g[r=0-w[4]-ps(r0=g[r=0-w[4]-p10])] with version 4 on turn 1.
+[Scorer-3] Scored s(r0=g[r=0-w[4]-ps(r0=g[r=0-w[4]-p10])]), returning to generator
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting prompt 26 to generator 0
+[Generator-0] generated g[r=0-w[4]-ps(r0=g[r=0-w[4]-ps(r0=g[r=0-w[3]-p8])])] with version 4 on turn 2.
+[Scorer-0] Scored s(r0=g[r=0-w[4]-ps(r0=g[r=0-w[4]-ps(r0=g[r=0-w[3]-p8])])]), pushing to learner
+[Generator-1] generated g[r=0-w[4]-ps(r0=g[r=0-w[4]-ps(r0=g[r=0-w[3]-p9])])] with version 4 on turn 2.
+[Scorer-1] Scored s(r0=g[r=0-w[4]-ps(r0=g[r=0-w[4]-ps(r0=g[r=0-w[3]-p9])])]), pushing to learner
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting prompt 26 to generator 1
+[PromptGenerator] putting prompt 27 to generator 0
+[PromptGenerator] putting prompt 28 to generator 1
+[Trainer,step=4] Trained policy 5 on batch (['s(r0=g[r=0-w[4]-ps(r0=g[r=0-w[4]-ps(r0=g[r=0-w[3]-p8])])])', 's(r0=g[r=0-w[4]-ps(r0=g[r=0-w[4]-ps(r0=g[r=0-w[3]-p9])])])']). Staleness: [0, 0]
+[Trainer] Finished training. Shutting down.
+[Scorer-3] Shutting down.
+[Scorer-0] Shutting down.
+[Generator-0] generated g[r=0-w[4]-ps(r0=g[r=0-w[4]-ps(r0=g[r=0-w[4]-p10])])] with version 4 on turn 2.
+[Generator-0] Shutting down.
+[Scorer-1] Scored s(r0=g[r=0-w[4]-ps(r0=g[r=0-w[4]-ps(r0=g[r=0-w[4]-p10])])]), pushing to learner
+[Scorer-1] Shutting down.
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] Shutting down.
+[Scorer-2] Shutting down.
+[Generator-1] generated g[r=0-w[4]-ps(r0=g[r=0-w[4]-ps(r0=g[r=0-w[4]-p11])])] with version 4 on turn 2.
+[Generator-1] Shutting down.
+[System] all tasks completed and shut down.
