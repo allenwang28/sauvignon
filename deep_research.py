@@ -1,4 +1,24 @@
-"""
+"""Deep Research proof of concept.
+
+This module implements a distributed RL workflow that enables agents to perform research
+tasks involving web browsing and code execution. The system orchestrates multiple components:
+
+1. Generators: Policy models that produce actions based on the current state
+2. Browsers: Agents that can navigate and extract information from the web
+3. Code Executors: Agents that can write and execute code
+4. Scorers: Models that evaluate the quality of completed tasks
+5. Learner: Updates policy weights based on collected experiences
+
+The system uses a loop-based approach where control flow, queues, and threading are
+exposed as first-class concerns. This design allows for fine-grained control over
+the orchestration of components while enabling complex multi-turn interactions.
+
+Key components:
+- Request routing system that directs tasks to appropriate executors
+- Priority queues that manage task scheduling based on importance
+- Distributed policy store for weight synchronization across generators
+- Multi-turn interaction flow where agents can perform sequences of actions
+
 """
 
 import pprint
@@ -37,9 +57,9 @@ class DeepResearchConfig:
     num_envs: int = 4
 
     # Parallelism knobs
-    gp: int = 1  # generator parallelism
-    lp: int = 1  # learner parallelism
-    sp: int = 1  # scorer parallelism
+    gp: int = 4  # generator parallelism
+    lp: int = 8  # learner parallelism
+    sp: int = 2  # scorer parallelism
 
 
 config = DeepResearchConfig()
@@ -50,19 +70,19 @@ def prompt_generator(
     generator_queues: list[PriorityQueue], stop_event: threading.Event
 ):
     """
-    Generates prompts and puts them into the prompt queues.
+    Generates initial research requests and distributes them to generator queues.
 
-    This function continuously generates prompts and distributes them across
-    the available prompt queues in a round-robin fashion. Each prompt is assigned
-    a unique ID and is placed in the queue with a priority of 0 (lowest priority).
-    Higher priority values (e.g., 10) indicate tasks that should be processed first.
+    This function serves as the entry point for new tasks in the system. It:
+    1. Creates DeepResearchRequest objects with initial prompts
+    2. Distributes them across generator queues in round-robin fashion
+    3. Sets appropriate priority based on the turn number (0 for initial prompts)
 
-    In a real implementation, this would typically pull from a dataset or environment
-    and feed initial prompts into the system to start the RL loop.
+    In a production system, this would typically pull from a dataset, user input,
+    or task queue rather than generating synthetic prompts.
 
     Args:
-        generator_queues: A list of PriorityQueue objects to distribute prompts to
-        stop_event: A threading.Event that signals when to stop generating prompts
+        generator_queues: List of priority queues for each generator
+        stop_event: Threading event to signal when to stop generating prompts
     """
     prompt_id = 0
     queue_id = 0
@@ -168,6 +188,22 @@ def router_loop(
     scorer_queue: queue.Queue,
     stop_event: threading.Event,
 ):
+    """
+    Routes generated actions to appropriate executor queues.
+
+    This function:
+    1. Takes actions from the executor queue
+    2. Determines the appropriate destination based on action type
+    3. Routes to browser, coder, or scorer queues accordingly
+    4. Maintains round-robin distribution for load balancing
+
+    Args:
+        executor_queue: Queue containing actions from generators
+        browser_queues: List of queues for browser executors
+        coder_queues: List of queues for code executors
+        scorer_queue: Queue for completed tasks ready for scoring
+        stop_event: Signal to terminate the loop
+    """
     coder_id = 0
     browser_id = 0
     while not stop_event.is_set():
@@ -213,6 +249,20 @@ def browser_loop(
     generation_queues: list[PriorityQueue],
     stop_event: threading.Event,
 ):
+    """
+    Executes web browsing actions and returns results to generators.
+
+    This function:
+    1. Takes browsing requests from its queue
+    2. Executes the browsing action using the browser agent
+    3. Returns results back to the appropriate generator queue
+
+    Args:
+        browser: The Browser instance that performs web actions
+        browser_queue: Queue containing browsing requests
+        generation_queues: List of queues to return results to generators
+        stop_event: Signal to terminate the loop
+    """
     while not stop_event.is_set():
         try:
             data: DeepResearchRequest = browser_queue.get(timeout=0.5)
@@ -236,6 +286,20 @@ def coder_loop(
     generation_queues: list[PriorityQueue],
     stop_event: threading.Event,
 ):
+    """
+    Executes code actions and returns results to generators.
+
+    This function:
+    1. Takes code execution requests from its queue
+    2. Executes the code using the code executor agent
+    3. Returns results back to the appropriate generator queue
+
+    Args:
+        code_executor: The CodeExecutor instance that runs code
+        coder_queue: Queue containing code execution requests
+        generation_queues: List of queues to return results to generators
+        stop_event: Signal to terminate the loop
+    """
     while not stop_event.is_set():
         try:
             data: DeepResearchRequest = coder_queue.get(timeout=0.5)
@@ -276,8 +340,7 @@ def score_loop(
     Args:
         scorer_id: Unique identifier for this scorer
         scorer: The Scorer instance that evaluates responses
-        executor_queue: Queue containing generations to score
-        generator_queues: List of queues to return scored responses to for continued interaction
+        scorer_queue: Queue containing completed tasks to score
         experience_queue: Queue to put completed experiences into for training
         stop_event: Signal to terminate the loop
     """
@@ -466,10 +529,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-# TODO:
-# - replace call_one with call
-# - turn a ValueMesh into some type of handle?
-# - add sharding
-# - show a simple environment abstraction
