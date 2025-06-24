@@ -1,0 +1,1101 @@
+I0624 12:06:15.251257 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:118] proc _1FmKEzbYPVW7[0] rank 0: created
+I0624 12:06:15.251707 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:118] proc _1FmKEzbYPVW7[1] rank 1: created
+I0624 12:06:15.252118 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:118] proc _1FmKEzbYPVW7[2] rank 2: created
+I0624 12:06:15.252500 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:118] proc _1FmKEzbYPVW7[3] rank 3: created
+I0624 12:06:17.130166 1793699 hyperactor_mesh/src/proc_mesh/mesh_agent.rs:116] [bootstrap] bootstrap_end
+I0624 12:06:17.130552 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:137] proc _1FmKEzbYPVW7[0] rank 0: running at addr:unix!@A0n3X2ByYTdnMDhkTnp79Cva mesh_agent:_1FmKEzbYPVW7[0].mesh[0]<hyperactor_mesh::proc_mesh::mesh_agent::MeshAgent>
+I0624 12:06:17.186434 1793703 hyperactor_mesh/src/proc_mesh/mesh_agent.rs:116] [bootstrap] bootstrap_end
+I0624 12:06:17.186752 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:137] proc _1FmKEzbYPVW7[3] rank 3: running at addr:unix!@iAZlljoOpiUhSS1vSXO8UBwT mesh_agent:_1FmKEzbYPVW7[3].mesh[0]<hyperactor_mesh::proc_mesh::mesh_agent::MeshAgent>
+I0624 12:06:17.191658 1793701 hyperactor_mesh/src/proc_mesh/mesh_agent.rs:116] [bootstrap] bootstrap_end
+I0624 12:06:17.192000 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:137] proc _1FmKEzbYPVW7[1] rank 1: running at addr:unix!@ZWSrlqdwBflGp2pw5nndAX4j mesh_agent:_1FmKEzbYPVW7[1].mesh[0]<hyperactor_mesh::proc_mesh::mesh_agent::MeshAgent>
+I0624 12:06:17.206846 1793702 hyperactor_mesh/src/proc_mesh/mesh_agent.rs:116] [bootstrap] bootstrap_end
+I0624 12:06:17.207063 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:137] proc _1FmKEzbYPVW7[2] rank 2: running at addr:unix!@Fa8sb4oP9df9yWPjtLU3V7qw mesh_agent:_1FmKEzbYPVW7[2].mesh[0]<hyperactor_mesh::proc_mesh::mesh_agent::MeshAgent>
+I0624 12:06:17.368548 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:118] proc _1zojp1vgay88[0] rank 0: created
+I0624 12:06:17.369067 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:118] proc _1zojp1vgay88[1] rank 1: created
+I0624 12:06:17.369468 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:118] proc _1zojp1vgay88[2] rank 2: created
+I0624 12:06:17.369949 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:118] proc _1zojp1vgay88[3] rank 3: created
+W0624 12:06:17.370484 1793702 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:17.370534 1793701 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:17.370877 1793703 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:17.370905 1793699 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+I0624 12:06:19.244543 1796807 hyperactor_mesh/src/proc_mesh/mesh_agent.rs:116] [bootstrap] bootstrap_end
+I0624 12:06:19.244882 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:137] proc _1zojp1vgay88[1] rank 1: running at addr:unix!@wAHXpmFa4mv478l2WNqVMHZs mesh_agent:_1zojp1vgay88[1].mesh[0]<hyperactor_mesh::proc_mesh::mesh_agent::MeshAgent>
+I0624 12:06:19.284886 1796812 hyperactor_mesh/src/proc_mesh/mesh_agent.rs:116] [bootstrap] bootstrap_end
+I0624 12:06:19.285144 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:137] proc _1zojp1vgay88[3] rank 3: running at addr:unix!@SvxIwWOb4mPxw7PB953sMmy2 mesh_agent:_1zojp1vgay88[3].mesh[0]<hyperactor_mesh::proc_mesh::mesh_agent::MeshAgent>
+I0624 12:06:19.290978 1796810 hyperactor_mesh/src/proc_mesh/mesh_agent.rs:116] [bootstrap] bootstrap_end
+I0624 12:06:19.291220 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:137] proc _1zojp1vgay88[2] rank 2: running at addr:unix!@ZIpvfLThYm1UMFFWa1jFIufN mesh_agent:_1zojp1vgay88[2].mesh[0]<hyperactor_mesh::proc_mesh::mesh_agent::MeshAgent>
+I0624 12:06:19.293002 1796804 hyperactor_mesh/src/proc_mesh/mesh_agent.rs:116] [bootstrap] bootstrap_end
+I0624 12:06:19.293228 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:137] proc _1zojp1vgay88[0] rank 0: running at addr:unix!@rP29f2PC561066IwQ2CHDTh0 mesh_agent:_1zojp1vgay88[0].mesh[0]<hyperactor_mesh::proc_mesh::mesh_agent::MeshAgent>
+I0624 12:06:19.450184 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:118] proc _1E4SAyF62vdG[0] rank 0: created
+I0624 12:06:19.450725 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:118] proc _1E4SAyF62vdG[1] rank 1: created
+W0624 12:06:19.452066 1796812 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:19.452075 1796810 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:19.452352 1796807 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:19.452778 1796804 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+I0624 12:06:21.334693 1800943 hyperactor_mesh/src/proc_mesh/mesh_agent.rs:116] [bootstrap] bootstrap_end
+I0624 12:06:21.335005 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:137] proc _1E4SAyF62vdG[0] rank 0: running at addr:unix!@tqUqRjld6DsEREDq2Sw1j2pX mesh_agent:_1E4SAyF62vdG[0].mesh[0]<hyperactor_mesh::proc_mesh::mesh_agent::MeshAgent>
+I0624 12:06:21.352970 1800944 hyperactor_mesh/src/proc_mesh/mesh_agent.rs:116] [bootstrap] bootstrap_end
+I0624 12:06:21.353234 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:137] proc _1E4SAyF62vdG[1] rank 1: running at addr:unix!@cFuSwT08DHb9cCrC4PRnJrRw mesh_agent:_1E4SAyF62vdG[1].mesh[0]<hyperactor_mesh::proc_mesh::mesh_agent::MeshAgent>
+I0624 12:06:21.512263 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:118] proc _1rqhdqjDahi8[0] rank 0: created
+I0624 12:06:21.512725 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:118] proc _1rqhdqjDahi8[1] rank 1: created
+W0624 12:06:21.514329 1800944 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:21.514351 1800943 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+I0624 12:06:23.340019 1802894 hyperactor_mesh/src/proc_mesh/mesh_agent.rs:116] [bootstrap] bootstrap_end
+I0624 12:06:23.340298 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:137] proc _1rqhdqjDahi8[0] rank 0: running at addr:unix!@Rd6iOErhihgKNHrmDfW2jUaC mesh_agent:_1rqhdqjDahi8[0].mesh[0]<hyperactor_mesh::proc_mesh::mesh_agent::MeshAgent>
+I0624 12:06:23.353366 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:137] proc _1rqhdqjDahi8[1] rank 1: running at addr:unix!@FVLebdt4XxfHui5oBTl5esyX mesh_agent:_1rqhdqjDahi8[1].mesh[0]<hyperactor_mesh::proc_mesh::mesh_agent::MeshAgent>
+I0624 12:06:23.353155 1802895 hyperactor_mesh/src/proc_mesh/mesh_agent.rs:116] [bootstrap] bootstrap_end
+I0624 12:06:23.515600 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:118] proc _1jw6VnSXD8Ni[0] rank 0: created
+I0624 12:06:23.516022 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:118] proc _1jw6VnSXD8Ni[1] rank 1: created
+W0624 12:06:23.517827 1802894 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:23.517878 1802895 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+I0624 12:06:25.403959 1805411 hyperactor_mesh/src/proc_mesh/mesh_agent.rs:116] [bootstrap] bootstrap_end
+I0624 12:06:25.404245 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:137] proc _1jw6VnSXD8Ni[0] rank 0: running at addr:unix!@6s9PtpKuXq6YcqJrVsFsg55L mesh_agent:_1jw6VnSXD8Ni[0].mesh[0]<hyperactor_mesh::proc_mesh::mesh_agent::MeshAgent>
+I0624 12:06:25.407193 1805412 hyperactor_mesh/src/proc_mesh/mesh_agent.rs:116] [bootstrap] bootstrap_end
+I0624 12:06:25.407436 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:137] proc _1jw6VnSXD8Ni[1] rank 1: running at addr:unix!@RRzlWnaVGaGpt8chLyYXafik mesh_agent:_1jw6VnSXD8Ni[1].mesh[0]<hyperactor_mesh::proc_mesh::mesh_agent::MeshAgent>
+I0624 12:06:25.618875 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:118] proc _13aHi8T6v2ry[0] rank 0: created
+I0624 12:06:25.619350 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:118] proc _13aHi8T6v2ry[1] rank 1: created
+W0624 12:06:25.621445 1805412 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:25.621409 1805411 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+I0624 12:06:27.615992 1808628 hyperactor_mesh/src/proc_mesh/mesh_agent.rs:116] [bootstrap] bootstrap_end
+I0624 12:06:27.616299 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:137] proc _13aHi8T6v2ry[0] rank 0: running at addr:unix!@m9Fdkm90sJ8FqAqb8rcOhC7L mesh_agent:_13aHi8T6v2ry[0].mesh[0]<hyperactor_mesh::proc_mesh::mesh_agent::MeshAgent>
+I0624 12:06:27.625211 1808632 hyperactor_mesh/src/proc_mesh/mesh_agent.rs:116] [bootstrap] bootstrap_end
+I0624 12:06:27.625449 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:137] proc _13aHi8T6v2ry[1] rank 1: running at addr:unix!@pCCHaL8V350UefthDiirN5PP mesh_agent:_13aHi8T6v2ry[1].mesh[0]<hyperactor_mesh::proc_mesh::mesh_agent::MeshAgent>
+I0624 12:06:27.786325 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:118] proc _17CXBQEm5ppx[0] rank 0: created
+I0624 12:06:27.786777 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:118] proc _17CXBQEm5ppx[1] rank 1: created
+I0624 12:06:27.787215 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:118] proc _17CXBQEm5ppx[2] rank 2: created
+I0624 12:06:27.787646 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:118] proc _17CXBQEm5ppx[3] rank 3: created
+I0624 12:06:27.788079 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:118] proc _17CXBQEm5ppx[4] rank 4: created
+W0624 12:06:27.788180 1808632 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:27.788222 1808628 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+I0624 12:06:27.788453 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:118] proc _17CXBQEm5ppx[5] rank 5: created
+I0624 12:06:27.788858 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:118] proc _17CXBQEm5ppx[6] rank 6: created
+I0624 12:06:27.789272 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:118] proc _17CXBQEm5ppx[7] rank 7: created
+I0624 12:06:29.651700 1811582 hyperactor_mesh/src/proc_mesh/mesh_agent.rs:116] [bootstrap] bootstrap_end
+I0624 12:06:29.652007 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:137] proc _17CXBQEm5ppx[7] rank 7: running at addr:unix!@ESnzhSKsr2iUb4Dp1hhGKYAu mesh_agent:_17CXBQEm5ppx[7].mesh[0]<hyperactor_mesh::proc_mesh::mesh_agent::MeshAgent>
+I0624 12:06:29.715007 1811567 hyperactor_mesh/src/proc_mesh/mesh_agent.rs:116] [bootstrap] bootstrap_end
+I0624 12:06:29.715272 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:137] proc _17CXBQEm5ppx[1] rank 1: running at addr:unix!@EIoxP8hxnzvTx1x0JD2SQQgA mesh_agent:_17CXBQEm5ppx[1].mesh[0]<hyperactor_mesh::proc_mesh::mesh_agent::MeshAgent>
+I0624 12:06:29.728158 1811575 hyperactor_mesh/src/proc_mesh/mesh_agent.rs:116] [bootstrap] bootstrap_end
+I0624 12:06:29.728382 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:137] proc _17CXBQEm5ppx[3] rank 3: running at addr:unix!@cMJfBgq6jaEl2fTJXrD7u8wa mesh_agent:_17CXBQEm5ppx[3].mesh[0]<hyperactor_mesh::proc_mesh::mesh_agent::MeshAgent>
+I0624 12:06:29.729001 1811579 hyperactor_mesh/src/proc_mesh/mesh_agent.rs:116] [bootstrap] bootstrap_end
+I0624 12:06:29.729220 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:137] proc _17CXBQEm5ppx[5] rank 5: running at addr:unix!@rsM7Tod6cGxxyi9dYF6DkSxu mesh_agent:_17CXBQEm5ppx[5].mesh[0]<hyperactor_mesh::proc_mesh::mesh_agent::MeshAgent>
+I0624 12:06:29.736043 1811565 hyperactor_mesh/src/proc_mesh/mesh_agent.rs:116] [bootstrap] bootstrap_end
+I0624 12:06:29.736335 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:137] proc _17CXBQEm5ppx[0] rank 0: running at addr:unix!@vCZRTycQ3Ds7ZFO7v5rMAAxq mesh_agent:_17CXBQEm5ppx[0].mesh[0]<hyperactor_mesh::proc_mesh::mesh_agent::MeshAgent>
+I0624 12:06:29.780193 1811580 hyperactor_mesh/src/proc_mesh/mesh_agent.rs:116] [bootstrap] bootstrap_end
+I0624 12:06:29.780417 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:137] proc _17CXBQEm5ppx[6] rank 6: running at addr:unix!@jKY7JL24C5mkT7qYLONttaNg mesh_agent:_17CXBQEm5ppx[6].mesh[0]<hyperactor_mesh::proc_mesh::mesh_agent::MeshAgent>
+I0624 12:06:29.784255 1811577 hyperactor_mesh/src/proc_mesh/mesh_agent.rs:116] [bootstrap] bootstrap_end
+I0624 12:06:29.784475 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:137] proc _17CXBQEm5ppx[4] rank 4: running at addr:unix!@Rn6wEBfX1tHHvvT7Qf5u3Mo7 mesh_agent:_17CXBQEm5ppx[4].mesh[0]<hyperactor_mesh::proc_mesh::mesh_agent::MeshAgent>
+I0624 12:06:29.854435 1811571 hyperactor_mesh/src/proc_mesh/mesh_agent.rs:116] [bootstrap] bootstrap_end
+I0624 12:06:29.854718 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:137] proc _17CXBQEm5ppx[2] rank 2: running at addr:unix!@KztNyhoProIp0Qby3i04I2zY mesh_agent:_17CXBQEm5ppx[2].mesh[0]<hyperactor_mesh::proc_mesh::mesh_agent::MeshAgent>
+I0624 12:06:30.010891 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:118] proc _1FbXbzrZu9Mf[0] rank 0: created
+W0624 12:06:30.012561 1811565 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:30.012519 1811580 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:30.012961 1811577 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:30.012951 1811579 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:30.012963 1811567 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:30.012968 1811582 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:30.013026 1811571 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:30.012997 1811575 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+I0624 12:06:31.885012 1819301 hyperactor_mesh/src/proc_mesh/mesh_agent.rs:116] [bootstrap] bootstrap_end
+I0624 12:06:31.885286 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:137] proc _1FbXbzrZu9Mf[0] rank 0: running at addr:unix!@bHJJ4yfsAozE2flsNJp1USBp mesh_agent:_1FbXbzrZu9Mf[0].mesh[0]<hyperactor_mesh::proc_mesh::mesh_agent::MeshAgent>
+I0624 12:06:32.052920 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:118] proc _18oGAcvwJfPk[0] rank 0: created
+W0624 12:06:32.055005 1819301 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+I0624 12:06:33.893171 1820382 hyperactor_mesh/src/proc_mesh/mesh_agent.rs:116] [bootstrap] bootstrap_end
+I0624 12:06:33.893478 1792242 hyperactor_mesh/src/proc_mesh/mod.rs:137] proc _18oGAcvwJfPk[0] rank 0: running at addr:unix!@F6ONPipYzpCbHt01aQ0mA1tU mesh_agent:_18oGAcvwJfPk[0].mesh[0]<hyperactor_mesh::proc_mesh::mesh_agent::MeshAgent>
+W0624 12:06:34.169022 1820382 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:34.169115 1793702 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:34.169149 1793699 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:34.169681 1793703 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:34.169729 1793701 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:34.171055 1796804 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:34.171111 1796812 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:34.171156 1796810 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:34.171189 1796807 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:34.172634 1800943 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:34.172832 1800944 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:34.173599 1802894 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:34.173616 1802895 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:34.174900 1805412 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:34.174957 1805411 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:34.176136 1808632 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:34.176158 1808628 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:34.177851 1811577 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:34.177867 1811580 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:34.177914 1811582 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:34.177931 1811571 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:34.177925 1811579 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:34.177924 1811567 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:34.178386 1811575 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:34.178511 1811565 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:34.179270 1819301 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:34.179811 1820382 hyperactor/src/proc.rs:1047] received signal for unknown child pid 1
+W0624 12:06:34.179906 1811577 hyperactor/src/mailbox/mod.rs:1256] mailbox attempted to post a message without binding Undeliverable<MessageEnvelope>, actor_id:ActorId(ProcId(WorldId("_17CXBQEm5ppx"), 4), "learner", 0), backtrace:<disabled>
+W0624 12:06:34.179903 1811579 hyperactor/src/mailbox/mod.rs:1256] mailbox attempted to post a message without binding Undeliverable<MessageEnvelope>, actor_id:ActorId(ProcId(WorldId("_17CXBQEm5ppx"), 5), "learner", 0), backtrace:<disabled>
+W0624 12:06:34.179907 1811580 hyperactor/src/mailbox/mod.rs:1256] mailbox attempted to post a message without binding Undeliverable<MessageEnvelope>, actor_id:ActorId(ProcId(WorldId("_17CXBQEm5ppx"), 6), "learner", 0), backtrace:<disabled>
+W0624 12:06:34.179950 1811567 hyperactor/src/mailbox/mod.rs:1256] mailbox attempted to post a message without binding Undeliverable<MessageEnvelope>, actor_id:ActorId(ProcId(WorldId("_17CXBQEm5ppx"), 1), "learner", 0), backtrace:<disabled>
+W0624 12:06:34.179968 1811575 hyperactor/src/mailbox/mod.rs:1256] mailbox attempted to post a message without binding Undeliverable<MessageEnvelope>, actor_id:ActorId(ProcId(WorldId("_17CXBQEm5ppx"), 3), "learner", 0), backtrace:<disabled>
+W0624 12:06:34.179967 1811565 hyperactor/src/mailbox/mod.rs:1256] mailbox attempted to post a message without binding Undeliverable<MessageEnvelope>, actor_id:ActorId(ProcId(WorldId("_17CXBQEm5ppx"), 0), "learner", 0), backtrace:<disabled>
+W0624 12:06:34.179993 1811571 hyperactor/src/mailbox/mod.rs:1256] mailbox attempted to post a message without binding Undeliverable<MessageEnvelope>, actor_id:ActorId(ProcId(WorldId("_17CXBQEm5ppx"), 2), "learner", 0), backtrace:<disabled>
+W0624 12:06:34.179977 1811582 hyperactor/src/mailbox/mod.rs:1256] mailbox attempted to post a message without binding Undeliverable<MessageEnvelope>, actor_id:ActorId(ProcId(WorldId("_17CXBQEm5ppx"), 7), "learner", 0), backtrace:<disabled>
+W0624 12:06:34.180157 1811580 hyperactor/src/proc.rs:1047] received signal for unknown child pid 2
+W0624 12:06:34.180145 1811577 hyperactor/src/proc.rs:1047] received signal for unknown child pid 2
+W0624 12:06:34.180163 1811579 hyperactor/src/proc.rs:1047] received signal for unknown child pid 2
+W0624 12:06:34.180218 1811567 hyperactor/src/proc.rs:1047] received signal for unknown child pid 2
+W0624 12:06:34.180253 1811571 hyperactor/src/proc.rs:1047] received signal for unknown child pid 2
+W0624 12:06:34.180287 1811565 hyperactor/src/proc.rs:1047] received signal for unknown child pid 2
+W0624 12:06:34.180286 1811575 hyperactor/src/proc.rs:1047] received signal for unknown child pid 2
+W0624 12:06:34.180305 1811582 hyperactor/src/proc.rs:1047] received signal for unknown child pid 2
+W0624 12:06:34.181225 1793699 hyperactor/src/mailbox/mod.rs:1256] mailbox attempted to post a message without binding Undeliverable<MessageEnvelope>, actor_id:ActorId(ProcId(WorldId("_1FmKEzbYPVW7"), 0), "generator", 0), backtrace:<disabled>
+W0624 12:06:34.181280 1793702 hyperactor/src/mailbox/mod.rs:1256] mailbox attempted to post a message without binding Undeliverable<MessageEnvelope>, actor_id:ActorId(ProcId(WorldId("_1FmKEzbYPVW7"), 2), "generator", 0), backtrace:<disabled>
+W0624 12:06:34.181331 1793701 hyperactor/src/mailbox/mod.rs:1256] mailbox attempted to post a message without binding Undeliverable<MessageEnvelope>, actor_id:ActorId(ProcId(WorldId("_1FmKEzbYPVW7"), 1), "generator", 0), backtrace:<disabled>
+W0624 12:06:34.181332 1793703 hyperactor/src/mailbox/mod.rs:1256] mailbox attempted to post a message without binding Undeliverable<MessageEnvelope>, actor_id:ActorId(ProcId(WorldId("_1FmKEzbYPVW7"), 3), "generator", 0), backtrace:<disabled>
+W0624 12:06:34.181490 1793699 hyperactor/src/proc.rs:1047] received signal for unknown child pid 2
+W0624 12:06:34.181578 1793702 hyperactor/src/proc.rs:1047] received signal for unknown child pid 2
+W0624 12:06:34.181622 1796810 hyperactor/src/mailbox/mod.rs:1256] mailbox attempted to post a message without binding Undeliverable<MessageEnvelope>, actor_id:ActorId(ProcId(WorldId("_1zojp1vgay88"), 2), "generator", 0), backtrace:<disabled>
+W0624 12:06:34.181667 1793701 hyperactor/src/proc.rs:1047] received signal for unknown child pid 2
+W0624 12:06:34.181661 1796812 hyperactor/src/mailbox/mod.rs:1256] mailbox attempted to post a message without binding Undeliverable<MessageEnvelope>, actor_id:ActorId(ProcId(WorldId("_1zojp1vgay88"), 3), "generator", 0), backtrace:<disabled>
+W0624 12:06:34.181680 1796804 hyperactor/src/mailbox/mod.rs:1256] mailbox attempted to post a message without binding Undeliverable<MessageEnvelope>, actor_id:ActorId(ProcId(WorldId("_1zojp1vgay88"), 0), "generator", 0), backtrace:<disabled>
+W0624 12:06:34.181705 1796807 hyperactor/src/mailbox/mod.rs:1256] mailbox attempted to post a message without binding Undeliverable<MessageEnvelope>, actor_id:ActorId(ProcId(WorldId("_1zojp1vgay88"), 1), "generator", 0), backtrace:<disabled>
+W0624 12:06:34.181709 1793703 hyperactor/src/proc.rs:1047] received signal for unknown child pid 2
+W0624 12:06:34.181863 1796810 hyperactor/src/proc.rs:1047] received signal for unknown child pid 2
+W0624 12:06:34.181966 1796807 hyperactor/src/proc.rs:1047] received signal for unknown child pid 2
+W0624 12:06:34.181966 1796812 hyperactor/src/proc.rs:1047] received signal for unknown child pid 2
+W0624 12:06:34.181995 1796804 hyperactor/src/proc.rs:1047] received signal for unknown child pid 2
+W0624 12:06:35.074905 1793702 hyperactor/src/proc.rs:1047] received signal for unknown child pid 3
+W0624 12:06:35.074952 1793699 hyperactor/src/proc.rs:1047] received signal for unknown child pid 3
+W0624 12:06:35.074989 1793701 hyperactor/src/proc.rs:1047] received signal for unknown child pid 3
+W0624 12:06:35.075002 1793703 hyperactor/src/proc.rs:1047] received signal for unknown child pid 3
+W0624 12:06:35.076439 1820382 hyperactor/src/mailbox/mod.rs:1256] mailbox attempted to post a message without binding Undeliverable<MessageEnvelope>, actor_id:ActorId(ProcId(WorldId("_18oGAcvwJfPk"), 0), "coder", 0), backtrace:<disabled>
+W0624 12:06:35.076799 1820382 hyperactor/src/proc.rs:1047] received signal for unknown child pid 2
+W0624 12:06:35.176759 1796804 hyperactor/src/proc.rs:1047] received signal for unknown child pid 3
+W0624 12:06:35.176890 1796807 hyperactor/src/proc.rs:1047] received signal for unknown child pid 3
+W0624 12:06:35.176881 1796810 hyperactor/src/proc.rs:1047] received signal for unknown child pid 3
+W0624 12:06:35.176935 1796812 hyperactor/src/proc.rs:1047] received signal for unknown child pid 3
+W0624 12:06:35.178278 1820382 hyperactor/src/proc.rs:1047] received signal for unknown child pid 3
+W0624 12:06:35.764693 1796812 hyperactor/src/proc.rs:1047] received signal for unknown child pid 4
+W0624 12:06:35.764722 1796804 hyperactor/src/proc.rs:1047] received signal for unknown child pid 4
+W0624 12:06:35.764775 1796807 hyperactor/src/proc.rs:1047] received signal for unknown child pid 4
+W0624 12:06:35.764808 1796810 hyperactor/src/proc.rs:1047] received signal for unknown child pid 4
+W0624 12:06:35.766175 1819301 hyperactor/src/mailbox/mod.rs:1256] mailbox attempted to post a message without binding Undeliverable<MessageEnvelope>, actor_id:ActorId(ProcId(WorldId("_1FbXbzrZu9Mf"), 0), "browser", 0), backtrace:<disabled>
+W0624 12:06:35.766503 1819301 hyperactor/src/proc.rs:1047] received signal for unknown child pid 2
+W0624 12:06:35.929824 1793702 hyperactor/src/proc.rs:1047] received signal for unknown child pid 4
+W0624 12:06:35.929861 1793699 hyperactor/src/proc.rs:1047] received signal for unknown child pid 4
+W0624 12:06:35.929884 1793703 hyperactor/src/proc.rs:1047] received signal for unknown child pid 4
+W0624 12:06:35.930169 1793701 hyperactor/src/proc.rs:1047] received signal for unknown child pid 4
+W0624 12:06:35.931366 1800944 hyperactor/src/mailbox/mod.rs:1256] mailbox attempted to post a message without binding Undeliverable<MessageEnvelope>, actor_id:ActorId(ProcId(WorldId("_1E4SAyF62vdG"), 1), "scorer", 0), backtrace:<disabled>
+W0624 12:06:35.931463 1800943 hyperactor/src/mailbox/mod.rs:1256] mailbox attempted to post a message without binding Undeliverable<MessageEnvelope>, actor_id:ActorId(ProcId(WorldId("_1E4SAyF62vdG"), 0), "scorer", 0), backtrace:<disabled>
+W0624 12:06:35.931676 1800944 hyperactor/src/proc.rs:1047] received signal for unknown child pid 2
+W0624 12:06:35.931794 1800943 hyperactor/src/proc.rs:1047] received signal for unknown child pid 2
+Config: DeepResearchConfig(num_generators=2, num_scorers=4, num_browsers=1, num_coders=1, num_train_steps=5, train_batch_size=4, num_envs=4, gp=4, lp=8, sp=2)
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='0', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='1', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='2', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='3', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='4', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='5', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='6', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='7', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='8', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[Trainer] Published weights for version 0
+[Generator-0] Starting loop
+[Generator-0] Updating weights to 0
+[Generator-1] Starting loop
+[Generator-1] Updating weights to 0
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='8', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='9', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='10', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[Generator-0] generated DeepResearchRequest(initial_prompt='0', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=code)'], policies=[0], latest_turn=1, action='code', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 0 on turn 1.
+[Router] Sending DeepResearchRequest(initial_prompt='0', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=code)'], policies=[0], latest_turn=1, action='code', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) to coder queue
+[Coder] Received DeepResearchRequest(initial_prompt='0', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=code)'], policies=[0], latest_turn=1, action='code', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) from code
+[Generator-1] generated DeepResearchRequest(initial_prompt='1', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=code)'], policies=[0], latest_turn=1, action='code', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 0 on turn 1.
+[Router] Sending DeepResearchRequest(initial_prompt='1', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=code)'], policies=[0], latest_turn=1, action='code', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) to coder queue
+[Coder] Received DeepResearchRequest(initial_prompt='1', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=code)'], policies=[0], latest_turn=1, action='code', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) from code
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='10', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[Coder] Browser queue is full, retrying...
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='10', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='11', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[Generator-1] generated DeepResearchRequest(initial_prompt='3', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=browse)'], policies=[0], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 0 on turn 1.
+[Router] Sending DeepResearchRequest(initial_prompt='3', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=browse)'], policies=[0], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) to browser queue
+[Browser] Received DeepResearchRequest(initial_prompt='3', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=browse)'], policies=[0], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) from browse
+[Generator-0] generated DeepResearchRequest(initial_prompt='2', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=stop)'], policies=[0], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 0 on turn 1.
+[Router] Sending DeepResearchRequest(initial_prompt='2', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=stop)'], policies=[0], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) to scorer queue
+[Scorer-0] Scored DeepResearchRequest(initial_prompt='2', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=stop)'], policies=[0], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0), pushing to learner
+[PromptGenerator] Queue is full, retrying...
+W0624 12:06:36.502788 1796812 hyperactor/src/proc.rs:1047] received signal for unknown child pid 5
+W0624 12:06:36.502841 1796804 hyperactor/src/proc.rs:1047] received signal for unknown child pid 5
+W0624 12:06:36.502872 1796807 hyperactor/src/proc.rs:1047] received signal for unknown child pid 5
+W0624 12:06:36.502878 1796810 hyperactor/src/proc.rs:1047] received signal for unknown child pid 5
+W0624 12:06:36.504228 1802894 hyperactor/src/mailbox/mod.rs:1256] mailbox attempted to post a message without binding Undeliverable<MessageEnvelope>, actor_id:ActorId(ProcId(WorldId("_1rqhdqjDahi8"), 0), "scorer", 0), backtrace:<disabled>
+W0624 12:06:36.504308 1802895 hyperactor/src/mailbox/mod.rs:1256] mailbox attempted to post a message without binding Undeliverable<MessageEnvelope>, actor_id:ActorId(ProcId(WorldId("_1rqhdqjDahi8"), 1), "scorer", 0), backtrace:<disabled>
+W0624 12:06:36.504611 1802894 hyperactor/src/proc.rs:1047] received signal for unknown child pid 2
+W0624 12:06:36.504649 1802895 hyperactor/src/proc.rs:1047] received signal for unknown child pid 2
+W0624 12:06:36.689713 1793703 hyperactor/src/proc.rs:1047] received signal for unknown child pid 5
+W0624 12:06:36.689740 1793699 hyperactor/src/proc.rs:1047] received signal for unknown child pid 5
+W0624 12:06:36.689756 1793702 hyperactor/src/proc.rs:1047] received signal for unknown child pid 5
+W0624 12:06:36.689755 1793701 hyperactor/src/proc.rs:1047] received signal for unknown child pid 5
+W0624 12:06:36.691224 1800943 hyperactor/src/proc.rs:1047] received signal for unknown child pid 3
+W0624 12:06:36.691197 1800944 hyperactor/src/proc.rs:1047] received signal for unknown child pid 3
+W0624 12:06:37.427793 1793699 hyperactor/src/proc.rs:1047] received signal for unknown child pid 6
+W0624 12:06:37.427841 1793701 hyperactor/src/proc.rs:1047] received signal for unknown child pid 6
+W0624 12:06:37.427850 1793703 hyperactor/src/proc.rs:1047] received signal for unknown child pid 6
+W0624 12:06:37.427860 1793702 hyperactor/src/proc.rs:1047] received signal for unknown child pid 6
+W0624 12:06:37.429261 1819301 hyperactor/src/proc.rs:1047] received signal for unknown child pid 3
+W0624 12:06:37.429472 1796812 hyperactor/src/proc.rs:1047] received signal for unknown child pid 6
+W0624 12:06:37.429506 1796804 hyperactor/src/proc.rs:1047] received signal for unknown child pid 6
+W0624 12:06:37.429603 1796810 hyperactor/src/proc.rs:1047] received signal for unknown child pid 6
+W0624 12:06:37.429620 1796807 hyperactor/src/proc.rs:1047] received signal for unknown child pid 6
+W0624 12:06:37.430354 1819301 hyperactor/src/proc.rs:1047] received signal for unknown child pid 4
+W0624 12:06:38.038789 1796812 hyperactor/src/proc.rs:1047] received signal for unknown child pid 7
+W0624 12:06:38.038798 1796804 hyperactor/src/proc.rs:1047] received signal for unknown child pid 7
+W0624 12:06:38.038848 1796810 hyperactor/src/proc.rs:1047] received signal for unknown child pid 7
+W0624 12:06:38.038888 1796807 hyperactor/src/proc.rs:1047] received signal for unknown child pid 7
+W0624 12:06:38.040228 1805412 hyperactor/src/mailbox/mod.rs:1256] mailbox attempted to post a message without binding Undeliverable<MessageEnvelope>, actor_id:ActorId(ProcId(WorldId("_1jw6VnSXD8Ni"), 1), "scorer", 0), backtrace:<disabled>
+W0624 12:06:38.040300 1805411 hyperactor/src/mailbox/mod.rs:1256] mailbox attempted to post a message without binding Undeliverable<MessageEnvelope>, actor_id:ActorId(ProcId(WorldId("_1jw6VnSXD8Ni"), 0), "scorer", 0), backtrace:<disabled>
+W0624 12:06:38.040587 1805412 hyperactor/src/proc.rs:1047] received signal for unknown child pid 2
+W0624 12:06:38.040614 1805411 hyperactor/src/proc.rs:1047] received signal for unknown child pid 2
+W0624 12:06:38.041780 1811580 hyperactor/src/proc.rs:1047] received signal for unknown child pid 3
+W0624 12:06:38.041812 1811577 hyperactor/src/proc.rs:1047] received signal for unknown child pid 3
+W0624 12:06:38.041891 1811579 hyperactor/src/proc.rs:1047] received signal for unknown child pid 3
+W0624 12:06:38.041879 1811567 hyperactor/src/proc.rs:1047] received signal for unknown child pid 3
+W0624 12:06:38.041913 1811571 hyperactor/src/proc.rs:1047] received signal for unknown child pid 3
+W0624 12:06:38.042054 1811565 hyperactor/src/proc.rs:1047] received signal for unknown child pid 3
+W0624 12:06:38.042093 1811582 hyperactor/src/proc.rs:1047] received signal for unknown child pid 3
+W0624 12:06:38.042213 1811575 hyperactor/src/proc.rs:1047] received signal for unknown child pid 3
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='11', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='12', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='13', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[Router] Browser queue is full, retrying...
+[Generator-1] generated DeepResearchRequest(initial_prompt='5', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=stop)'], policies=[0], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 0 on turn 1.
+[Router] Sending DeepResearchRequest(initial_prompt='5', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=stop)'], policies=[0], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) to scorer queue
+[Scorer-1] Scored DeepResearchRequest(initial_prompt='5', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=stop)'], policies=[0], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0), pushing to learner
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='13', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[Generator-0] generated DeepResearchRequest(initial_prompt='0', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=code)', 'coder(0)-call-code', 'generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=stop)'], policies=[0, 0], latest_turn=2, action='stop', coder_id=0, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=1, score=0) with version 0 on turn 2.
+[Router] Sending DeepResearchRequest(initial_prompt='0', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=code)', 'coder(0)-call-code', 'generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=stop)'], policies=[0, 0], latest_turn=2, action='stop', coder_id=0, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=1, score=0) to scorer queue
+[Scorer-0] Scored DeepResearchRequest(initial_prompt='0', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=code)', 'coder(0)-call-code', 'generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=stop)'], policies=[0, 0], latest_turn=2, action='stop', coder_id=0, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=1, score=0), pushing to learner
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='13', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='14', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='15', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[Generator-0] generated DeepResearchRequest(initial_prompt='4', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=browse)'], policies=[0], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 0 on turn 1.
+[Router] Sending DeepResearchRequest(initial_prompt='4', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=browse)'], policies=[0], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) to browser queue
+[Browser] Received DeepResearchRequest(initial_prompt='4', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=browse)'], policies=[0], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) from browse
+[Generator-1] generated DeepResearchRequest(initial_prompt='7', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=browse)'], policies=[0], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 0 on turn 1.
+[Router] Sending DeepResearchRequest(initial_prompt='7', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=browse)'], policies=[0], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) to browser queue
+[Browser] Received DeepResearchRequest(initial_prompt='7', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=browse)'], policies=[0], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) from browse
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='15', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[Router] Browser queue is full, retrying...
+[Generator-1] generated DeepResearchRequest(initial_prompt='8', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=stop)'], policies=[0], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 0 on turn 1.
+[Router] Sending DeepResearchRequest(initial_prompt='8', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=stop)'], policies=[0], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) to scorer queue
+[Scorer-2] Scored DeepResearchRequest(initial_prompt='8', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=stop)'], policies=[0], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0), pushing to learner
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='15', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='16', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+W0624 12:06:38.243917 1811582 hyperactor/src/proc.rs:1047] received signal for unknown child pid 4
+W0624 12:06:38.243946 1811580 hyperactor/src/proc.rs:1047] received signal for unknown child pid 4
+W0624 12:06:38.243992 1811571 hyperactor/src/proc.rs:1047] received signal for unknown child pid 4
+W0624 12:06:38.243963 1811579 hyperactor/src/proc.rs:1047] received signal for unknown child pid 4
+W0624 12:06:38.243942 1811567 hyperactor/src/proc.rs:1047] received signal for unknown child pid 4
+W0624 12:06:38.243957 1811565 hyperactor/src/proc.rs:1047] received signal for unknown child pid 4
+W0624 12:06:38.243945 1811577 hyperactor/src/proc.rs:1047] received signal for unknown child pid 4
+W0624 12:06:38.243982 1811575 hyperactor/src/proc.rs:1047] received signal for unknown child pid 4
+W0624 12:06:38.385495 1793703 hyperactor/src/proc.rs:1047] received signal for unknown child pid 7
+W0624 12:06:38.385606 1793699 hyperactor/src/proc.rs:1047] received signal for unknown child pid 7
+W0624 12:06:38.385531 1793701 hyperactor/src/proc.rs:1047] received signal for unknown child pid 7
+W0624 12:06:38.385752 1793702 hyperactor/src/proc.rs:1047] received signal for unknown child pid 7
+W0624 12:06:38.386168 1793703 hyperactor/src/proc.rs:1047] received signal for unknown child pid 8
+W0624 12:06:38.386207 1793699 hyperactor/src/proc.rs:1047] received signal for unknown child pid 8
+W0624 12:06:38.386295 1793701 hyperactor/src/proc.rs:1047] received signal for unknown child pid 8
+W0624 12:06:38.386347 1793702 hyperactor/src/proc.rs:1047] received signal for unknown child pid 8
+W0624 12:06:38.387094 1820382 hyperactor/src/proc.rs:1047] received signal for unknown child pid 4
+W0624 12:06:38.611737 1796804 hyperactor/src/proc.rs:1047] received signal for unknown child pid 8
+W0624 12:06:38.611800 1796812 hyperactor/src/proc.rs:1047] received signal for unknown child pid 8
+W0624 12:06:38.611826 1796810 hyperactor/src/proc.rs:1047] received signal for unknown child pid 8
+W0624 12:06:38.611879 1796807 hyperactor/src/proc.rs:1047] received signal for unknown child pid 8
+W0624 12:06:38.612466 1796812 hyperactor/src/proc.rs:1047] received signal for unknown child pid 9
+W0624 12:06:38.612534 1796804 hyperactor/src/proc.rs:1047] received signal for unknown child pid 9
+W0624 12:06:38.612546 1796810 hyperactor/src/proc.rs:1047] received signal for unknown child pid 9
+W0624 12:06:38.612550 1796807 hyperactor/src/proc.rs:1047] received signal for unknown child pid 9
+W0624 12:06:38.613068 1808632 hyperactor/src/mailbox/mod.rs:1256] mailbox attempted to post a message without binding Undeliverable<MessageEnvelope>, actor_id:ActorId(ProcId(WorldId("_13aHi8T6v2ry"), 1), "scorer", 0), backtrace:<disabled>
+W0624 12:06:38.613069 1808628 hyperactor/src/mailbox/mod.rs:1256] mailbox attempted to post a message without binding Undeliverable<MessageEnvelope>, actor_id:ActorId(ProcId(WorldId("_13aHi8T6v2ry"), 0), "scorer", 0), backtrace:<disabled>
+W0624 12:06:38.613404 1808628 hyperactor/src/proc.rs:1047] received signal for unknown child pid 2
+W0624 12:06:38.613440 1808632 hyperactor/src/proc.rs:1047] received signal for unknown child pid 2
+W0624 12:06:39.328583 1796804 hyperactor/src/proc.rs:1047] received signal for unknown child pid 10
+W0624 12:06:39.328670 1796810 hyperactor/src/proc.rs:1047] received signal for unknown child pid 10
+W0624 12:06:39.328717 1796812 hyperactor/src/proc.rs:1047] received signal for unknown child pid 10
+W0624 12:06:39.328782 1796807 hyperactor/src/proc.rs:1047] received signal for unknown child pid 10
+W0624 12:06:39.329901 1819301 hyperactor/src/proc.rs:1047] received signal for unknown child pid 5
+W0624 12:06:39.336495 1793701 hyperactor/src/proc.rs:1047] received signal for unknown child pid 9
+W0624 12:06:39.336545 1793699 hyperactor/src/proc.rs:1047] received signal for unknown child pid 9
+W0624 12:06:39.336590 1793702 hyperactor/src/proc.rs:1047] received signal for unknown child pid 9
+W0624 12:06:39.336586 1793703 hyperactor/src/proc.rs:1047] received signal for unknown child pid 9
+[Trainer,step=0] Trained policy 1 on batch ([DeepResearchRequest(initial_prompt='2',
+                     events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, '
+                             '0],action=stop)'],
+                     policies=[0],
+                     latest_turn=1,
+                     action='stop',
+                     coder_id=None,
+                     browser_id=None,
+                     generator_id=0,
+                     processed_browser_requests=0,
+                     processed_code_requests=0,
+                     score=0),
+ DeepResearchRequest(initial_prompt='5',
+                     events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, '
+                             '0],action=stop)'],
+                     policies=[0],
+                     latest_turn=1,
+                     action='stop',
+                     coder_id=None,
+                     browser_id=None,
+                     generator_id=0,
+                     processed_browser_requests=0,
+                     processed_code_requests=0,
+                     score=0),
+ DeepResearchRequest(initial_prompt='0',
+                     events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, '
+                             '0],action=code)',
+                             'coder(0)-call-code',
+                             'generation(weights=[0, 0, 0, 0, 0, 0, 0, '
+                             '0],action=stop)'],
+                     policies=[0, 0],
+                     latest_turn=2,
+                     action='stop',
+                     coder_id=0,
+                     browser_id=None,
+                     generator_id=0,
+                     processed_browser_requests=0,
+                     processed_code_requests=1,
+                     score=0),
+ DeepResearchRequest(initial_prompt='8',
+                     events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, '
+                             '0],action=stop)'],
+                     policies=[0],
+                     latest_turn=1,
+                     action='stop',
+                     coder_id=None,
+                     browser_id=None,
+                     generator_id=0,
+                     processed_browser_requests=0,
+                     processed_code_requests=0,
+                     score=0)]). Staleness: [0.0, 0.0, 0.0, 0.0]
+[Trainer] Published weights for version 1
+[Generator-0] generated DeepResearchRequest(initial_prompt='6', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=code)'], policies=[0], latest_turn=1, action='code', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 0 on turn 1.
+[Generator-0] Updating weights to 1
+[Router] Sending DeepResearchRequest(initial_prompt='6', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=code)'], policies=[0], latest_turn=1, action='code', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) to coder queue
+[Coder] Received DeepResearchRequest(initial_prompt='6', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=code)'], policies=[0], latest_turn=1, action='code', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) from code
+[Generator-1] generated DeepResearchRequest(initial_prompt='10', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=stop)'], policies=[0], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 0 on turn 1.
+[Generator-1] Updating weights to 1
+[Router] Sending DeepResearchRequest(initial_prompt='10', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=stop)'], policies=[0], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) to scorer queue
+[Scorer-3] Scored DeepResearchRequest(initial_prompt='10', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=stop)'], policies=[0], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0), pushing to learner
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='16', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='17', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='17', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='18', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[Generator-1] generated DeepResearchRequest(initial_prompt='11', events=['generation(weights=[1, 1, 1, 1, 1, 1, 1, 1],action=browse)'], policies=[1], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 1 on turn 1.
+[Router] Sending DeepResearchRequest(initial_prompt='11', events=['generation(weights=[1, 1, 1, 1, 1, 1, 1, 1],action=browse)'], policies=[1], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) to browser queue
+[Browser] Received DeepResearchRequest(initial_prompt='11', events=['generation(weights=[1, 1, 1, 1, 1, 1, 1, 1],action=browse)'], policies=[1], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) from browse
+[Generator-0] generated DeepResearchRequest(initial_prompt='4', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=browse)', 'browser(0,browse)', 'generation(weights=[1, 1, 1, 1, 1, 1, 1, 1],action=browse)'], policies=[0, 1], latest_turn=2, action='browse', coder_id=None, browser_id=0, generator_id=0, processed_browser_requests=1, processed_code_requests=0, score=0) with version 1 on turn 2.
+[Router] Sending DeepResearchRequest(initial_prompt='4', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=browse)', 'browser(0,browse)', 'generation(weights=[1, 1, 1, 1, 1, 1, 1, 1],action=browse)'], policies=[0, 1], latest_turn=2, action='browse', coder_id=None, browser_id=0, generator_id=0, processed_browser_requests=1, processed_code_requests=0, score=0) to browser queue
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='18', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='19', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='20', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[Router] Browser queue is full, retrying...
+W0624 12:06:39.831340 1819301 hyperactor/src/proc.rs:1047] received signal for unknown child pid 6
+W0624 12:06:39.998953 1796810 hyperactor/src/proc.rs:1047] received signal for unknown child pid 11
+W0624 12:06:39.998960 1796804 hyperactor/src/proc.rs:1047] received signal for unknown child pid 11
+W0624 12:06:39.999080 1796812 hyperactor/src/proc.rs:1047] received signal for unknown child pid 11
+W0624 12:06:39.999126 1796807 hyperactor/src/proc.rs:1047] received signal for unknown child pid 11
+W0624 12:06:40.000778 1802894 hyperactor/src/proc.rs:1047] received signal for unknown child pid 3
+W0624 12:06:40.000920 1802895 hyperactor/src/proc.rs:1047] received signal for unknown child pid 3
+W0624 12:06:40.331787 1793701 hyperactor/src/proc.rs:1047] received signal for unknown child pid 10
+W0624 12:06:40.331807 1793702 hyperactor/src/proc.rs:1047] received signal for unknown child pid 10
+W0624 12:06:40.331756 1793703 hyperactor/src/proc.rs:1047] received signal for unknown child pid 10
+W0624 12:06:40.331852 1793699 hyperactor/src/proc.rs:1047] received signal for unknown child pid 10
+W0624 12:06:40.333247 1802895 hyperactor/src/proc.rs:1047] received signal for unknown child pid 4
+W0624 12:06:40.333290 1802894 hyperactor/src/proc.rs:1047] received signal for unknown child pid 4
+W0624 12:06:40.845785 1796804 hyperactor/src/proc.rs:1047] received signal for unknown child pid 12
+W0624 12:06:40.845915 1796810 hyperactor/src/proc.rs:1047] received signal for unknown child pid 12
+W0624 12:06:40.845959 1796807 hyperactor/src/proc.rs:1047] received signal for unknown child pid 12
+W0624 12:06:40.845994 1796812 hyperactor/src/proc.rs:1047] received signal for unknown child pid 12
+W0624 12:06:40.847439 1820382 hyperactor/src/proc.rs:1047] received signal for unknown child pid 5
+W0624 12:06:41.273751 1793701 hyperactor/src/proc.rs:1047] received signal for unknown child pid 11
+W0624 12:06:41.273823 1793702 hyperactor/src/proc.rs:1047] received signal for unknown child pid 11
+W0624 12:06:41.273830 1793699 hyperactor/src/proc.rs:1047] received signal for unknown child pid 11
+W0624 12:06:41.273839 1793703 hyperactor/src/proc.rs:1047] received signal for unknown child pid 11
+W0624 12:06:41.275255 1819301 hyperactor/src/proc.rs:1047] received signal for unknown child pid 7
+W0624 12:06:41.492801 1796804 hyperactor/src/proc.rs:1047] received signal for unknown child pid 13
+W0624 12:06:41.492790 1796810 hyperactor/src/proc.rs:1047] received signal for unknown child pid 13
+W0624 12:06:41.492824 1796807 hyperactor/src/proc.rs:1047] received signal for unknown child pid 13
+W0624 12:06:41.492833 1796812 hyperactor/src/proc.rs:1047] received signal for unknown child pid 13
+W0624 12:06:41.494262 1805412 hyperactor/src/proc.rs:1047] received signal for unknown child pid 3
+W0624 12:06:41.494353 1805411 hyperactor/src/proc.rs:1047] received signal for unknown child pid 3
+W0624 12:06:41.495422 1811580 hyperactor/src/proc.rs:1047] received signal for unknown child pid 5
+W0624 12:06:41.495464 1811582 hyperactor/src/proc.rs:1047] received signal for unknown child pid 5
+W0624 12:06:41.495470 1811577 hyperactor/src/proc.rs:1047] received signal for unknown child pid 5
+W0624 12:06:41.495496 1811571 hyperactor/src/proc.rs:1047] received signal for unknown child pid 5
+W0624 12:06:41.495489 1811575 hyperactor/src/proc.rs:1047] received signal for unknown child pid 5
+W0624 12:06:41.495522 1811565 hyperactor/src/proc.rs:1047] received signal for unknown child pid 5
+W0624 12:06:41.495529 1811567 hyperactor/src/proc.rs:1047] received signal for unknown child pid 5
+W0624 12:06:41.495513 1811579 hyperactor/src/proc.rs:1047] received signal for unknown child pid 5
+[Browser] Received DeepResearchRequest(initial_prompt='4', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=browse)', 'browser(0,browse)', 'generation(weights=[1, 1, 1, 1, 1, 1, 1, 1],action=browse)'], policies=[0, 1], latest_turn=2, action='browse', coder_id=None, browser_id=0, generator_id=0, processed_browser_requests=1, processed_code_requests=0, score=0) from browse
+[Generator-1] generated DeepResearchRequest(initial_prompt='13', events=['generation(weights=[1, 1, 1, 1, 1, 1, 1, 1],action=stop)'], policies=[1], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 1 on turn 1.
+[Router] Sending DeepResearchRequest(initial_prompt='13', events=['generation(weights=[1, 1, 1, 1, 1, 1, 1, 1],action=stop)'], policies=[1], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) to scorer queue
+[Scorer-1] Scored DeepResearchRequest(initial_prompt='13', events=['generation(weights=[1, 1, 1, 1, 1, 1, 1, 1],action=stop)'], policies=[1], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0), pushing to learner
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='20', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[Router] Browser queue is full, retrying...
+[Generator-0] generated DeepResearchRequest(initial_prompt='6', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=code)', 'coder(0)-call-code', 'generation(weights=[1, 1, 1, 1, 1, 1, 1, 1],action=stop)'], policies=[0, 1], latest_turn=2, action='stop', coder_id=0, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=1, score=0) with version 1 on turn 2.
+[Router] Sending DeepResearchRequest(initial_prompt='6', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=code)', 'coder(0)-call-code', 'generation(weights=[1, 1, 1, 1, 1, 1, 1, 1],action=stop)'], policies=[0, 1], latest_turn=2, action='stop', coder_id=0, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=1, score=0) to scorer queue
+[Scorer-1] Scored DeepResearchRequest(initial_prompt='6', events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, 0],action=code)', 'coder(0)-call-code', 'generation(weights=[1, 1, 1, 1, 1, 1, 1, 1],action=stop)'], policies=[0, 1], latest_turn=2, action='stop', coder_id=0, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=1, score=0), pushing to learner
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='20', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='21', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='22', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[Generator-1] generated DeepResearchRequest(initial_prompt='15', events=['generation(weights=[1, 1, 1, 1, 1, 1, 1, 1],action=code)'], policies=[1], latest_turn=1, action='code', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 1 on turn 1.
+[Router] Sending DeepResearchRequest(initial_prompt='15', events=['generation(weights=[1, 1, 1, 1, 1, 1, 1, 1],action=code)'], policies=[1], latest_turn=1, action='code', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) to coder queue
+[Coder] Received DeepResearchRequest(initial_prompt='15', events=['generation(weights=[1, 1, 1, 1, 1, 1, 1, 1],action=code)'], policies=[1], latest_turn=1, action='code', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) from code
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='22', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[Generator-0] generated DeepResearchRequest(initial_prompt='9', events=['generation(weights=[1, 1, 1, 1, 1, 1, 1, 1],action=browse)'], policies=[1], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 1 on turn 1.
+[Router] Sending DeepResearchRequest(initial_prompt='9', events=['generation(weights=[1, 1, 1, 1, 1, 1, 1, 1],action=browse)'], policies=[1], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) to browser queue
+[Browser] Received DeepResearchRequest(initial_prompt='9', events=['generation(weights=[1, 1, 1, 1, 1, 1, 1, 1],action=browse)'], policies=[1], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) from browse
+[Coder] Browser queue is full, retrying...
+[Generator-1] generated DeepResearchRequest(initial_prompt='16', events=['generation(weights=[1, 1, 1, 1, 1, 1, 1, 1],action=stop)'], policies=[1], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 1 on turn 1.
+[Router] Sending DeepResearchRequest(initial_prompt='16', events=['generation(weights=[1, 1, 1, 1, 1, 1, 1, 1],action=stop)'], policies=[1], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) to scorer queue
+[Scorer-2] Scored DeepResearchRequest(initial_prompt='16', events=['generation(weights=[1, 1, 1, 1, 1, 1, 1, 1],action=stop)'], policies=[1], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0), pushing to learner
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='22', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='23', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+W0624 12:06:41.697106 1811571 hyperactor/src/proc.rs:1047] received signal for unknown child pid 6
+W0624 12:06:41.697129 1811582 hyperactor/src/proc.rs:1047] received signal for unknown child pid 6
+W0624 12:06:41.697153 1811577 hyperactor/src/proc.rs:1047] received signal for unknown child pid 6
+W0624 12:06:41.697132 1811580 hyperactor/src/proc.rs:1047] received signal for unknown child pid 6
+W0624 12:06:41.697209 1811579 hyperactor/src/proc.rs:1047] received signal for unknown child pid 6
+W0624 12:06:41.697229 1811565 hyperactor/src/proc.rs:1047] received signal for unknown child pid 6
+W0624 12:06:41.697245 1811567 hyperactor/src/proc.rs:1047] received signal for unknown child pid 6
+W0624 12:06:41.697236 1811575 hyperactor/src/proc.rs:1047] received signal for unknown child pid 6
+W0624 12:06:41.955625 1793703 hyperactor/src/proc.rs:1047] received signal for unknown child pid 12
+W0624 12:06:41.955661 1793702 hyperactor/src/proc.rs:1047] received signal for unknown child pid 12
+W0624 12:06:41.955668 1793699 hyperactor/src/proc.rs:1047] received signal for unknown child pid 12
+W0624 12:06:41.955688 1793701 hyperactor/src/proc.rs:1047] received signal for unknown child pid 12
+W0624 12:06:41.956227 1793702 hyperactor/src/proc.rs:1047] received signal for unknown child pid 13
+W0624 12:06:41.956273 1793699 hyperactor/src/proc.rs:1047] received signal for unknown child pid 13
+W0624 12:06:41.956303 1793701 hyperactor/src/proc.rs:1047] received signal for unknown child pid 13
+W0624 12:06:41.956392 1793703 hyperactor/src/proc.rs:1047] received signal for unknown child pid 13
+W0624 12:06:41.957183 1805411 hyperactor/src/proc.rs:1047] received signal for unknown child pid 4
+W0624 12:06:41.957233 1805412 hyperactor/src/proc.rs:1047] received signal for unknown child pid 4
+W0624 12:06:42.093829 1796804 hyperactor/src/proc.rs:1047] received signal for unknown child pid 14
+W0624 12:06:42.093946 1796810 hyperactor/src/proc.rs:1047] received signal for unknown child pid 14
+W0624 12:06:42.093985 1796807 hyperactor/src/proc.rs:1047] received signal for unknown child pid 14
+W0624 12:06:42.094023 1796812 hyperactor/src/proc.rs:1047] received signal for unknown child pid 14
+W0624 12:06:42.094387 1796807 hyperactor/src/proc.rs:1047] received signal for unknown child pid 15
+W0624 12:06:42.094428 1796810 hyperactor/src/proc.rs:1047] received signal for unknown child pid 15
+W0624 12:06:42.094480 1796804 hyperactor/src/proc.rs:1047] received signal for unknown child pid 15
+W0624 12:06:42.094462 1796812 hyperactor/src/proc.rs:1047] received signal for unknown child pid 15
+W0624 12:06:42.095372 1820382 hyperactor/src/proc.rs:1047] received signal for unknown child pid 6
+W0624 12:06:42.617102 1793702 hyperactor/src/proc.rs:1047] received signal for unknown child pid 14
+W0624 12:06:42.617140 1793699 hyperactor/src/proc.rs:1047] received signal for unknown child pid 14
+W0624 12:06:42.617123 1793701 hyperactor/src/proc.rs:1047] received signal for unknown child pid 14
+W0624 12:06:42.617141 1793703 hyperactor/src/proc.rs:1047] received signal for unknown child pid 14
+W0624 12:06:42.618447 1800944 hyperactor/src/proc.rs:1047] received signal for unknown child pid 4
+W0624 12:06:42.618646 1800943 hyperactor/src/proc.rs:1047] received signal for unknown child pid 4
+W0624 12:06:42.825129 1796810 hyperactor/src/proc.rs:1047] received signal for unknown child pid 16
+W0624 12:06:42.825104 1796807 hyperactor/src/proc.rs:1047] received signal for unknown child pid 16
+W0624 12:06:42.825054 1796804 hyperactor/src/proc.rs:1047] received signal for unknown child pid 16
+W0624 12:06:42.825160 1796812 hyperactor/src/proc.rs:1047] received signal for unknown child pid 16
+W0624 12:06:42.826731 1820382 hyperactor/src/proc.rs:1047] received signal for unknown child pid 7
+W0624 12:06:43.189442 1793701 hyperactor/src/proc.rs:1047] received signal for unknown child pid 15
+W0624 12:06:43.189472 1793699 hyperactor/src/proc.rs:1047] received signal for unknown child pid 15
+W0624 12:06:43.189545 1793703 hyperactor/src/proc.rs:1047] received signal for unknown child pid 15
+W0624 12:06:43.189671 1793702 hyperactor/src/proc.rs:1047] received signal for unknown child pid 15
+[Trainer,step=1] Trained policy 2 on batch ([DeepResearchRequest(initial_prompt='10',
+                     events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, '
+                             '0],action=stop)'],
+                     policies=[0],
+                     latest_turn=1,
+                     action='stop',
+                     coder_id=None,
+                     browser_id=None,
+                     generator_id=0,
+                     processed_browser_requests=0,
+                     processed_code_requests=0,
+                     score=0),
+ DeepResearchRequest(initial_prompt='13',
+                     events=['generation(weights=[1, 1, 1, 1, 1, 1, 1, '
+                             '1],action=stop)'],
+                     policies=[1],
+                     latest_turn=1,
+                     action='stop',
+                     coder_id=None,
+                     browser_id=None,
+                     generator_id=0,
+                     processed_browser_requests=0,
+                     processed_code_requests=0,
+                     score=0),
+ DeepResearchRequest(initial_prompt='6',
+                     events=['generation(weights=[0, 0, 0, 0, 0, 0, 0, '
+                             '0],action=code)',
+                             'coder(0)-call-code',
+                             'generation(weights=[1, 1, 1, 1, 1, 1, 1, '
+                             '1],action=stop)'],
+                     policies=[0, 1],
+                     latest_turn=2,
+                     action='stop',
+                     coder_id=0,
+                     browser_id=None,
+                     generator_id=0,
+                     processed_browser_requests=0,
+                     processed_code_requests=1,
+                     score=0),
+ DeepResearchRequest(initial_prompt='16',
+                     events=['generation(weights=[1, 1, 1, 1, 1, 1, 1, '
+                             '1],action=stop)'],
+                     policies=[1],
+                     latest_turn=1,
+                     action='stop',
+                     coder_id=None,
+                     browser_id=None,
+                     generator_id=0,
+                     processed_browser_requests=0,
+                     processed_code_requests=0,
+                     score=0)]). Staleness: [1.0, 0.0, 0.5, 0.0]
+[Trainer] Published weights for version 2
+[Generator-0] generated DeepResearchRequest(initial_prompt='12', events=['generation(weights=[1, 1, 1, 1, 1, 1, 1, 1],action=stop)'], policies=[1], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 1 on turn 1.
+[Generator-0] Updating weights to 2
+[Router] Sending DeepResearchRequest(initial_prompt='12', events=['generation(weights=[1, 1, 1, 1, 1, 1, 1, 1],action=stop)'], policies=[1], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) to scorer queue
+[Scorer-2] Scored DeepResearchRequest(initial_prompt='12', events=['generation(weights=[1, 1, 1, 1, 1, 1, 1, 1],action=stop)'], policies=[1], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0), pushing to learner
+[Generator-1] generated DeepResearchRequest(initial_prompt='17', events=['generation(weights=[1, 1, 1, 1, 1, 1, 1, 1],action=code)'], policies=[1], latest_turn=1, action='code', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 1 on turn 1.
+[Generator-1] Updating weights to 2
+[Router] Sending DeepResearchRequest(initial_prompt='17', events=['generation(weights=[1, 1, 1, 1, 1, 1, 1, 1],action=code)'], policies=[1], latest_turn=1, action='code', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) to coder queue
+[Coder] Received DeepResearchRequest(initial_prompt='17', events=['generation(weights=[1, 1, 1, 1, 1, 1, 1, 1],action=code)'], policies=[1], latest_turn=1, action='code', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) from code
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='23', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='24', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[Generator-0] generated DeepResearchRequest(initial_prompt='9', events=['generation(weights=[1, 1, 1, 1, 1, 1, 1, 1],action=browse)', 'browser(0,browse)', 'generation(weights=[2, 2, 2, 2, 2, 2, 2, 2],action=stop)'], policies=[1, 2], latest_turn=2, action='stop', coder_id=None, browser_id=0, generator_id=0, processed_browser_requests=1, processed_code_requests=0, score=0) with version 2 on turn 2.
+[Router] Sending DeepResearchRequest(initial_prompt='9', events=['generation(weights=[1, 1, 1, 1, 1, 1, 1, 1],action=browse)', 'browser(0,browse)', 'generation(weights=[2, 2, 2, 2, 2, 2, 2, 2],action=stop)'], policies=[1, 2], latest_turn=2, action='stop', coder_id=None, browser_id=0, generator_id=0, processed_browser_requests=1, processed_code_requests=0, score=0) to scorer queue
+[Scorer-0] Scored DeepResearchRequest(initial_prompt='9', events=['generation(weights=[1, 1, 1, 1, 1, 1, 1, 1],action=browse)', 'browser(0,browse)', 'generation(weights=[2, 2, 2, 2, 2, 2, 2, 2],action=stop)'], policies=[1, 2], latest_turn=2, action='stop', coder_id=None, browser_id=0, generator_id=0, processed_browser_requests=1, processed_code_requests=0, score=0), pushing to learner
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='24', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='25', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='26', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[Generator-1] generated DeepResearchRequest(initial_prompt='18', events=['generation(weights=[2, 2, 2, 2, 2, 2, 2, 2],action=code)'], policies=[2], latest_turn=1, action='code', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 2 on turn 1.
+[Router] Sending DeepResearchRequest(initial_prompt='18', events=['generation(weights=[2, 2, 2, 2, 2, 2, 2, 2],action=code)'], policies=[2], latest_turn=1, action='code', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) to coder queue
+[Coder] Received DeepResearchRequest(initial_prompt='18', events=['generation(weights=[2, 2, 2, 2, 2, 2, 2, 2],action=code)'], policies=[2], latest_turn=1, action='code', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) from code
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='26', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+W0624 12:06:43.190916 1802894 hyperactor/src/proc.rs:1047] received signal for unknown child pid 5
+W0624 12:06:43.190945 1802895 hyperactor/src/proc.rs:1047] received signal for unknown child pid 5
+W0624 12:06:43.567691 1796804 hyperactor/src/proc.rs:1047] received signal for unknown child pid 17
+W0624 12:06:43.567811 1796807 hyperactor/src/proc.rs:1047] received signal for unknown child pid 17
+W0624 12:06:43.567830 1796812 hyperactor/src/proc.rs:1047] received signal for unknown child pid 17
+W0624 12:06:43.567943 1796810 hyperactor/src/proc.rs:1047] received signal for unknown child pid 17
+W0624 12:06:43.569367 1820382 hyperactor/src/proc.rs:1047] received signal for unknown child pid 8
+W0624 12:06:43.915845 1793699 hyperactor/src/proc.rs:1047] received signal for unknown child pid 16
+W0624 12:06:43.915881 1793702 hyperactor/src/proc.rs:1047] received signal for unknown child pid 16
+W0624 12:06:43.915994 1793701 hyperactor/src/proc.rs:1047] received signal for unknown child pid 16
+W0624 12:06:43.915906 1793703 hyperactor/src/proc.rs:1047] received signal for unknown child pid 16
+W0624 12:06:43.917337 1805411 hyperactor/src/proc.rs:1047] received signal for unknown child pid 5
+W0624 12:06:43.917332 1805412 hyperactor/src/proc.rs:1047] received signal for unknown child pid 5
+W0624 12:06:43.918477 1811571 hyperactor/src/proc.rs:1047] received signal for unknown child pid 7
+W0624 12:06:43.918482 1811577 hyperactor/src/proc.rs:1047] received signal for unknown child pid 7
+W0624 12:06:43.918515 1811580 hyperactor/src/proc.rs:1047] received signal for unknown child pid 7
+W0624 12:06:43.918545 1811579 hyperactor/src/proc.rs:1047] received signal for unknown child pid 7
+W0624 12:06:43.918585 1811575 hyperactor/src/proc.rs:1047] received signal for unknown child pid 7
+W0624 12:06:43.918584 1811567 hyperactor/src/proc.rs:1047] received signal for unknown child pid 7
+W0624 12:06:43.918594 1811565 hyperactor/src/proc.rs:1047] received signal for unknown child pid 7
+W0624 12:06:43.918685 1811582 hyperactor/src/proc.rs:1047] received signal for unknown child pid 7
+W0624 12:06:44.120328 1811577 hyperactor/src/proc.rs:1047] received signal for unknown child pid 8
+W0624 12:06:44.120364 1811582 hyperactor/src/proc.rs:1047] received signal for unknown child pid 8
+W0624 12:06:44.120364 1811579 hyperactor/src/proc.rs:1047] received signal for unknown child pid 8
+W0624 12:06:44.120388 1811575 hyperactor/src/proc.rs:1047] received signal for unknown child pid 8
+W0624 12:06:44.120364 1811571 hyperactor/src/proc.rs:1047] received signal for unknown child pid 8
+W0624 12:06:44.120270 1811580 hyperactor/src/proc.rs:1047] received signal for unknown child pid 8
+W0624 12:06:44.120413 1811565 hyperactor/src/proc.rs:1047] received signal for unknown child pid 8
+W0624 12:06:44.120432 1811567 hyperactor/src/proc.rs:1047] received signal for unknown child pid 8
+W0624 12:06:44.248829 1796804 hyperactor/src/proc.rs:1047] received signal for unknown child pid 18
+W0624 12:06:44.248878 1796810 hyperactor/src/proc.rs:1047] received signal for unknown child pid 18
+W0624 12:06:44.248970 1796812 hyperactor/src/proc.rs:1047] received signal for unknown child pid 18
+W0624 12:06:44.249031 1796807 hyperactor/src/proc.rs:1047] received signal for unknown child pid 18
+W0624 12:06:44.249435 1796804 hyperactor/src/proc.rs:1047] received signal for unknown child pid 19
+W0624 12:06:44.249491 1796807 hyperactor/src/proc.rs:1047] received signal for unknown child pid 19
+W0624 12:06:44.249480 1796812 hyperactor/src/proc.rs:1047] received signal for unknown child pid 19
+W0624 12:06:44.249496 1796810 hyperactor/src/proc.rs:1047] received signal for unknown child pid 19
+W0624 12:06:44.250251 1819301 hyperactor/src/proc.rs:1047] received signal for unknown child pid 8
+W0624 12:06:44.589206 1793702 hyperactor/src/proc.rs:1047] received signal for unknown child pid 17
+W0624 12:06:44.589257 1793701 hyperactor/src/proc.rs:1047] received signal for unknown child pid 17
+W0624 12:06:44.589276 1793703 hyperactor/src/proc.rs:1047] received signal for unknown child pid 17
+[Generator-0] generated DeepResearchRequest(initial_prompt='17', events=['generation(weights=[1, 1, 1, 1, 1, 1, 1, 1],action=code)', 'coder(0)-call-code', 'generation(weights=[2, 2, 2, 2, 2, 2, 2, 2],action=stop)'], policies=[1, 2], latest_turn=2, action='stop', coder_id=0, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=1, score=0) with version 2 on turn 2.
+[Router] Sending DeepResearchRequest(initial_prompt='17', events=['generation(weights=[1, 1, 1, 1, 1, 1, 1, 1],action=code)', 'coder(0)-call-code', 'generation(weights=[2, 2, 2, 2, 2, 2, 2, 2],action=stop)'], policies=[1, 2], latest_turn=2, action='stop', coder_id=0, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=1, score=0) to scorer queue
+[Scorer-1] Scored DeepResearchRequest(initial_prompt='17', events=['generation(weights=[1, 1, 1, 1, 1, 1, 1, 1],action=code)', 'coder(0)-call-code', 'generation(weights=[2, 2, 2, 2, 2, 2, 2, 2],action=stop)'], policies=[1, 2], latest_turn=2, action='stop', coder_id=0, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=1, score=0), pushing to learner
+[Coder] Browser queue is full, retrying...
+[Generator-1] generated DeepResearchRequest(initial_prompt='20', events=['generation(weights=[2, 2, 2, 2, 2, 2, 2, 2],action=code)'], policies=[2], latest_turn=1, action='code', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 2 on turn 1.
+[Router] Sending DeepResearchRequest(initial_prompt='20', events=['generation(weights=[2, 2, 2, 2, 2, 2, 2, 2],action=code)'], policies=[2], latest_turn=1, action='code', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) to coder queue
+[Coder] Received DeepResearchRequest(initial_prompt='20', events=['generation(weights=[2, 2, 2, 2, 2, 2, 2, 2],action=code)'], policies=[2], latest_turn=1, action='code', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) from code
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='26', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='27', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[Generator-0] generated DeepResearchRequest(initial_prompt='14', events=['generation(weights=[2, 2, 2, 2, 2, 2, 2, 2],action=stop)'], policies=[2], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 2 on turn 1.
+[Router] Sending DeepResearchRequest(initial_prompt='14', events=['generation(weights=[2, 2, 2, 2, 2, 2, 2, 2],action=stop)'], policies=[2], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) to scorer queue
+[Scorer-2] Scored DeepResearchRequest(initial_prompt='14', events=['generation(weights=[2, 2, 2, 2, 2, 2, 2, 2],action=stop)'], policies=[2], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0), pushing to learner
+[Trainer,step=2] Trained policy 3 on batch ([DeepResearchRequest(initial_prompt='12',
+                     events=['generation(weights=[1, 1, 1, 1, 1, 1, 1, '
+                             '1],action=stop)'],
+                     policies=[1],
+                     latest_turn=1,
+                     action='stop',
+                     coder_id=None,
+                     browser_id=None,
+                     generator_id=0,
+                     processed_browser_requests=0,
+                     processed_code_requests=0,
+                     score=0),
+ DeepResearchRequest(initial_prompt='9',
+                     events=['generation(weights=[1, 1, 1, 1, 1, 1, 1, '
+                             '1],action=browse)',
+                             'browser(0,browse)',
+                             'generation(weights=[2, 2, 2, 2, 2, 2, 2, '
+                             '2],action=stop)'],
+                     policies=[1, 2],
+                     latest_turn=2,
+                     action='stop',
+                     coder_id=None,
+                     browser_id=0,
+                     generator_id=0,
+                     processed_browser_requests=1,
+                     processed_code_requests=0,
+                     score=0),
+ DeepResearchRequest(initial_prompt='17',
+                     events=['generation(weights=[1, 1, 1, 1, 1, 1, 1, '
+                             '1],action=code)',
+                             'coder(0)-call-code',
+                             'generation(weights=[2, 2, 2, 2, 2, 2, 2, '
+                             '2],action=stop)'],
+                     policies=[1, 2],
+                     latest_turn=2,
+                     action='stop',
+                     coder_id=0,
+                     browser_id=None,
+                     generator_id=0,
+                     processed_browser_requests=0,
+                     processed_code_requests=1,
+                     score=0),
+ DeepResearchRequest(initial_prompt='14',
+                     events=['generation(weights=[2, 2, 2, 2, 2, 2, 2, '
+                             '2],action=stop)'],
+                     policies=[2],
+                     latest_turn=1,
+                     action='stop',
+                     coder_id=None,
+                     browser_id=None,
+                     generator_id=0,
+                     processed_browser_requests=0,
+                     processed_code_requests=0,
+                     score=0)]). Staleness: [1.0, 0.5, 0.5, 0.0]
+[Trainer] Published weights for version 3
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='27', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='28', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='29', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[Generator-1] generated DeepResearchRequest(initial_prompt='22', events=['generation(weights=[2, 2, 2, 2, 2, 2, 2, 2],action=browse)'], policies=[2], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 2 on turn 1.
+[Generator-1] Updating weights to 3
+[Router] Sending DeepResearchRequest(initial_prompt='22', events=['generation(weights=[2, 2, 2, 2, 2, 2, 2, 2],action=browse)'], policies=[2], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) to browser queue
+[Browser] Received DeepResearchRequest(initial_prompt='22', events=['generation(weights=[2, 2, 2, 2, 2, 2, 2, 2],action=browse)'], policies=[2], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) from browse
+W0624 12:06:44.589352 1793699 hyperactor/src/proc.rs:1047] received signal for unknown child pid 17
+W0624 12:06:44.589788 1793702 hyperactor/src/proc.rs:1047] received signal for unknown child pid 18
+W0624 12:06:44.589830 1793703 hyperactor/src/proc.rs:1047] received signal for unknown child pid 18
+W0624 12:06:44.589839 1793701 hyperactor/src/proc.rs:1047] received signal for unknown child pid 18
+W0624 12:06:44.590034 1793699 hyperactor/src/proc.rs:1047] received signal for unknown child pid 18
+W0624 12:06:44.590707 1820382 hyperactor/src/proc.rs:1047] received signal for unknown child pid 9
+W0624 12:06:44.764827 1796810 hyperactor/src/proc.rs:1047] received signal for unknown child pid 20
+W0624 12:06:44.764816 1796807 hyperactor/src/proc.rs:1047] received signal for unknown child pid 20
+W0624 12:06:44.764850 1796812 hyperactor/src/proc.rs:1047] received signal for unknown child pid 20
+W0624 12:06:44.764824 1796804 hyperactor/src/proc.rs:1047] received signal for unknown child pid 20
+W0624 12:06:44.766092 1820382 hyperactor/src/proc.rs:1047] received signal for unknown child pid 10
+W0624 12:06:45.578819 1793703 hyperactor/src/proc.rs:1047] received signal for unknown child pid 19
+W0624 12:06:45.578862 1793702 hyperactor/src/proc.rs:1047] received signal for unknown child pid 19
+W0624 12:06:45.578863 1793699 hyperactor/src/proc.rs:1047] received signal for unknown child pid 19
+W0624 12:06:45.578914 1793701 hyperactor/src/proc.rs:1047] received signal for unknown child pid 19
+W0624 12:06:45.580235 1819301 hyperactor/src/proc.rs:1047] received signal for unknown child pid 9
+W0624 12:06:45.661694 1796804 hyperactor/src/proc.rs:1047] received signal for unknown child pid 21
+W0624 12:06:45.661695 1796810 hyperactor/src/proc.rs:1047] received signal for unknown child pid 21
+W0624 12:06:45.661730 1796807 hyperactor/src/proc.rs:1047] received signal for unknown child pid 21
+W0624 12:06:45.661789 1796812 hyperactor/src/proc.rs:1047] received signal for unknown child pid 21
+W0624 12:06:45.663113 1819301 hyperactor/src/proc.rs:1047] received signal for unknown child pid 10
+W0624 12:06:46.322772 1796804 hyperactor/src/proc.rs:1047] received signal for unknown child pid 22
+W0624 12:06:46.322803 1796810 hyperactor/src/proc.rs:1047] received signal for unknown child pid 22
+W0624 12:06:46.322916 1796812 hyperactor/src/proc.rs:1047] received signal for unknown child pid 22
+W0624 12:06:46.322902 1796807 hyperactor/src/proc.rs:1047] received signal for unknown child pid 22
+W0624 12:06:46.324094 1819301 hyperactor/src/proc.rs:1047] received signal for unknown child pid 11
+W0624 12:06:46.546204 1793703 hyperactor/src/proc.rs:1047] received signal for unknown child pid 20
+W0624 12:06:46.546221 1793702 hyperactor/src/proc.rs:1047] received signal for unknown child pid 20
+W0624 12:06:46.546260 1793701 hyperactor/src/proc.rs:1047] received signal for unknown child pid 20
+W0624 12:06:46.546260 1793699 hyperactor/src/proc.rs:1047] received signal for unknown child pid 20
+[Generator-0] generated DeepResearchRequest(initial_prompt='20', events=['generation(weights=[2, 2, 2, 2, 2, 2, 2, 2],action=code)', 'coder(0)-call-code', 'generation(weights=[2, 2, 2, 2, 2, 2, 2, 2],action=code)'], policies=[2, 2], latest_turn=2, action='code', coder_id=0, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=1, score=0) with version 2 on turn 2.
+[Generator-0] Updating weights to 3
+[Router] Sending DeepResearchRequest(initial_prompt='20', events=['generation(weights=[2, 2, 2, 2, 2, 2, 2, 2],action=code)', 'coder(0)-call-code', 'generation(weights=[2, 2, 2, 2, 2, 2, 2, 2],action=code)'], policies=[2, 2], latest_turn=2, action='code', coder_id=0, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=1, score=0) to coder queue
+[Coder] Received DeepResearchRequest(initial_prompt='20', events=['generation(weights=[2, 2, 2, 2, 2, 2, 2, 2],action=code)', 'coder(0)-call-code', 'generation(weights=[2, 2, 2, 2, 2, 2, 2, 2],action=code)'], policies=[2, 2], latest_turn=2, action='code', coder_id=0, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=1, score=0) from code
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='29', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[Router] Browser queue is full, retrying...
+[Generator-1] generated DeepResearchRequest(initial_prompt='23', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=code)'], policies=[3], latest_turn=1, action='code', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 3 on turn 1.
+[Router] Sending DeepResearchRequest(initial_prompt='23', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=code)'], policies=[3], latest_turn=1, action='code', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) to coder queue
+[Coder] Received DeepResearchRequest(initial_prompt='23', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=code)'], policies=[3], latest_turn=1, action='code', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) from code
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='29', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='30', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[Coder] Browser queue is full, retrying...
+[Generator-0] generated DeepResearchRequest(initial_prompt='19', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=browse)'], policies=[3], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 3 on turn 1.
+[Router] Sending DeepResearchRequest(initial_prompt='19', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=browse)'], policies=[3], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) to browser queue
+[Browser] Received DeepResearchRequest(initial_prompt='19', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=browse)'], policies=[3], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) from browse
+[Generator-1] generated DeepResearchRequest(initial_prompt='24', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=browse)'], policies=[3], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 3 on turn 1.
+[Router] Sending DeepResearchRequest(initial_prompt='24', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=browse)'], policies=[3], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) to browser queue
+[Browser] Received DeepResearchRequest(initial_prompt='24', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=browse)'], policies=[3], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) from browse
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='30', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='31', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[Router] Browser queue is full, retrying...
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='31', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='32', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[Generator-1] generated DeepResearchRequest(initial_prompt='26', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=browse)'], policies=[3], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 3 on turn 1.
+[Router] Sending DeepResearchRequest(initial_prompt='26', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=browse)'], policies=[3], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) to browser queue
+[Browser] Received DeepResearchRequest(initial_prompt='26', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=browse)'], policies=[3], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) from browse
+[Generator-0] generated DeepResearchRequest(initial_prompt='20', events=['generation(weights=[2, 2, 2, 2, 2, 2, 2, 2],action=code)', 'coder(0)-call-code', 'generation(weights=[2, 2, 2, 2, 2, 2, 2, 2],action=code)', 'coder(0)-call-code', 'generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=browse)'], policies=[2, 2, 3], latest_turn=3, action='browse', coder_id=0, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=2, score=0) with version 3 on turn 3.
+[Router] Sending DeepResearchRequest(initial_prompt='20', events=['generation(weights=[2, 2, 2, 2, 2, 2, 2, 2],action=code)', 'coder(0)-call-code', 'generation(weights=[2, 2, 2, 2, 2, 2, 2, 2],action=code)', 'coder(0)-call-code', 'generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=browse)'], policies=[2, 2, 3], latest_turn=3, action='browse', coder_id=0, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=2, score=0) to browser queue
+[PromptGenerator] Queue is full, retrying...
+W0624 12:06:46.825615 1819301 hyperactor/src/proc.rs:1047] received signal for unknown child pid 12
+W0624 12:06:46.917041 1796804 hyperactor/src/proc.rs:1047] received signal for unknown child pid 23
+W0624 12:06:46.917072 1796810 hyperactor/src/proc.rs:1047] received signal for unknown child pid 23
+W0624 12:06:46.917149 1796807 hyperactor/src/proc.rs:1047] received signal for unknown child pid 23
+W0624 12:06:46.917206 1796812 hyperactor/src/proc.rs:1047] received signal for unknown child pid 23
+W0624 12:06:46.918434 1805411 hyperactor/src/proc.rs:1047] received signal for unknown child pid 6
+W0624 12:06:46.918444 1805412 hyperactor/src/proc.rs:1047] received signal for unknown child pid 6
+W0624 12:06:47.396787 1793702 hyperactor/src/proc.rs:1047] received signal for unknown child pid 21
+W0624 12:06:47.396854 1793701 hyperactor/src/proc.rs:1047] received signal for unknown child pid 21
+W0624 12:06:47.396839 1793703 hyperactor/src/proc.rs:1047] received signal for unknown child pid 21
+W0624 12:06:47.396836 1793699 hyperactor/src/proc.rs:1047] received signal for unknown child pid 21
+W0624 12:06:47.398299 1805412 hyperactor/src/proc.rs:1047] received signal for unknown child pid 7
+W0624 12:06:47.398432 1805411 hyperactor/src/proc.rs:1047] received signal for unknown child pid 7
+W0624 12:06:47.872603 1796804 hyperactor/src/proc.rs:1047] received signal for unknown child pid 24
+W0624 12:06:47.872633 1796810 hyperactor/src/proc.rs:1047] received signal for unknown child pid 24
+W0624 12:06:47.872738 1796812 hyperactor/src/proc.rs:1047] received signal for unknown child pid 24
+W0624 12:06:47.872756 1796807 hyperactor/src/proc.rs:1047] received signal for unknown child pid 24
+W0624 12:06:47.874019 1805412 hyperactor/src/proc.rs:1047] received signal for unknown child pid 8
+W0624 12:06:47.874040 1805411 hyperactor/src/proc.rs:1047] received signal for unknown child pid 8
+W0624 12:06:48.004353 1793702 hyperactor/src/proc.rs:1047] received signal for unknown child pid 22
+W0624 12:06:48.004362 1793703 hyperactor/src/proc.rs:1047] received signal for unknown child pid 22
+W0624 12:06:48.004402 1793699 hyperactor/src/proc.rs:1047] received signal for unknown child pid 22
+W0624 12:06:48.004401 1793701 hyperactor/src/proc.rs:1047] received signal for unknown child pid 22
+W0624 12:06:48.005723 1819301 hyperactor/src/proc.rs:1047] received signal for unknown child pid 13
+W0624 12:06:48.509761 1796804 hyperactor/src/proc.rs:1047] received signal for unknown child pid 25
+W0624 12:06:48.509947 1796812 hyperactor/src/proc.rs:1047] received signal for unknown child pid 25
+W0624 12:06:48.510027 1796807 hyperactor/src/proc.rs:1047] received signal for unknown child pid 25
+W0624 12:06:48.509935 1796810 hyperactor/src/proc.rs:1047] received signal for unknown child pid 25
+W0624 12:06:48.511425 1820382 hyperactor/src/proc.rs:1047] received signal for unknown child pid 11
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='32', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='33', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='34', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[Router] Browser queue is full, retrying...
+[Browser] Received DeepResearchRequest(initial_prompt='20', events=['generation(weights=[2, 2, 2, 2, 2, 2, 2, 2],action=code)', 'coder(0)-call-code', 'generation(weights=[2, 2, 2, 2, 2, 2, 2, 2],action=code)', 'coder(0)-call-code', 'generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=browse)'], policies=[2, 2, 3], latest_turn=3, action='browse', coder_id=0, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=2, score=0) from browse
+[Generator-1] generated DeepResearchRequest(initial_prompt='27', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=stop)'], policies=[3], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 3 on turn 1.
+[Router] Sending DeepResearchRequest(initial_prompt='27', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=stop)'], policies=[3], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) to scorer queue
+[Scorer-2] Scored DeepResearchRequest(initial_prompt='27', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=stop)'], policies=[3], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0), pushing to learner
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='34', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[Router] Browser queue is full, retrying...
+[Generator-0] generated DeepResearchRequest(initial_prompt='19', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=browse)', 'browser(0,browse)', 'generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=stop)'], policies=[3, 3], latest_turn=2, action='stop', coder_id=None, browser_id=0, generator_id=0, processed_browser_requests=1, processed_code_requests=0, score=0) with version 3 on turn 2.
+[Router] Sending DeepResearchRequest(initial_prompt='19', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=browse)', 'browser(0,browse)', 'generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=stop)'], policies=[3, 3], latest_turn=2, action='stop', coder_id=None, browser_id=0, generator_id=0, processed_browser_requests=1, processed_code_requests=0, score=0) to scorer queue
+[Scorer-2] Scored DeepResearchRequest(initial_prompt='19', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=browse)', 'browser(0,browse)', 'generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=stop)'], policies=[3, 3], latest_turn=2, action='stop', coder_id=None, browser_id=0, generator_id=0, processed_browser_requests=1, processed_code_requests=0, score=0), pushing to learner
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='34', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='35', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='36', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[Generator-1] generated DeepResearchRequest(initial_prompt='29', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=stop)'], policies=[3], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 3 on turn 1.
+[Router] Sending DeepResearchRequest(initial_prompt='29', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=stop)'], policies=[3], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) to scorer queue
+[Scorer-2] Scored DeepResearchRequest(initial_prompt='29', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=stop)'], policies=[3], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0), pushing to learner
+[Generator-0] generated DeepResearchRequest(initial_prompt='21', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=browse)'], policies=[3], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 3 on turn 1.
+[Router] Sending DeepResearchRequest(initial_prompt='21', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=browse)'], policies=[3], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) to browser queue
+[Browser] Received DeepResearchRequest(initial_prompt='21', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=browse)'], policies=[3], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) from browse
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='36', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[Generator-1] generated DeepResearchRequest(initial_prompt='30', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=code)'], policies=[3], latest_turn=1, action='code', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 3 on turn 1.
+[Router] Sending DeepResearchRequest(initial_prompt='30', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=code)'], policies=[3], latest_turn=1, action='code', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) to coder queue
+[Coder] Received DeepResearchRequest(initial_prompt='30', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=code)'], policies=[3], latest_turn=1, action='code', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) from code
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='36', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+W0624 12:06:48.892751 1793703 hyperactor/src/proc.rs:1047] received signal for unknown child pid 23
+W0624 12:06:48.892797 1793699 hyperactor/src/proc.rs:1047] received signal for unknown child pid 23
+W0624 12:06:48.892794 1793702 hyperactor/src/proc.rs:1047] received signal for unknown child pid 23
+W0624 12:06:48.892845 1793701 hyperactor/src/proc.rs:1047] received signal for unknown child pid 23
+W0624 12:06:49.012761 1820382 hyperactor/src/proc.rs:1047] received signal for unknown child pid 12
+W0624 12:06:49.285527 1796807 hyperactor/src/proc.rs:1047] received signal for unknown child pid 26
+W0624 12:06:49.285461 1796804 hyperactor/src/proc.rs:1047] received signal for unknown child pid 26
+W0624 12:06:49.285586 1796810 hyperactor/src/proc.rs:1047] received signal for unknown child pid 26
+W0624 12:06:49.285598 1796812 hyperactor/src/proc.rs:1047] received signal for unknown child pid 26
+W0624 12:06:49.287015 1805411 hyperactor/src/proc.rs:1047] received signal for unknown child pid 9
+W0624 12:06:49.287046 1805412 hyperactor/src/proc.rs:1047] received signal for unknown child pid 9
+W0624 12:06:49.287986 1811580 hyperactor/src/proc.rs:1047] received signal for unknown child pid 9
+W0624 12:06:49.288116 1811577 hyperactor/src/proc.rs:1047] received signal for unknown child pid 9
+W0624 12:06:49.288102 1811567 hyperactor/src/proc.rs:1047] received signal for unknown child pid 9
+W0624 12:06:49.288115 1811565 hyperactor/src/proc.rs:1047] received signal for unknown child pid 9
+W0624 12:06:49.288172 1811571 hyperactor/src/proc.rs:1047] received signal for unknown child pid 9
+W0624 12:06:49.288161 1811582 hyperactor/src/proc.rs:1047] received signal for unknown child pid 9
+W0624 12:06:49.288244 1811575 hyperactor/src/proc.rs:1047] received signal for unknown child pid 9
+W0624 12:06:49.288239 1811579 hyperactor/src/proc.rs:1047] received signal for unknown child pid 9
+W0624 12:06:49.489878 1811577 hyperactor/src/proc.rs:1047] received signal for unknown child pid 10
+W0624 12:06:49.489886 1811580 hyperactor/src/proc.rs:1047] received signal for unknown child pid 10
+W0624 12:06:49.489914 1811565 hyperactor/src/proc.rs:1047] received signal for unknown child pid 10
+W0624 12:06:49.489946 1811567 hyperactor/src/proc.rs:1047] received signal for unknown child pid 10
+W0624 12:06:49.489923 1811582 hyperactor/src/proc.rs:1047] received signal for unknown child pid 10
+W0624 12:06:49.489966 1811575 hyperactor/src/proc.rs:1047] received signal for unknown child pid 10
+W0624 12:06:49.490009 1811571 hyperactor/src/proc.rs:1047] received signal for unknown child pid 10
+W0624 12:06:49.490019 1811579 hyperactor/src/proc.rs:1047] received signal for unknown child pid 10
+W0624 12:06:49.708846 1793699 hyperactor/src/proc.rs:1047] received signal for unknown child pid 24
+W0624 12:06:49.708945 1793701 hyperactor/src/proc.rs:1047] received signal for unknown child pid 24
+W0624 12:06:49.708997 1793702 hyperactor/src/proc.rs:1047] received signal for unknown child pid 24
+W0624 12:06:49.709151 1793703 hyperactor/src/proc.rs:1047] received signal for unknown child pid 24
+W0624 12:06:49.709522 1793702 hyperactor/src/proc.rs:1047] received signal for unknown child pid 25
+W0624 12:06:49.709518 1793699 hyperactor/src/proc.rs:1047] received signal for unknown child pid 25
+W0624 12:06:49.709545 1793701 hyperactor/src/proc.rs:1047] received signal for unknown child pid 25
+W0624 12:06:49.709573 1793703 hyperactor/src/proc.rs:1047] received signal for unknown child pid 25
+W0624 12:06:49.710473 1805412 hyperactor/src/proc.rs:1047] received signal for unknown child pid 10
+W0624 12:06:49.710520 1805411 hyperactor/src/proc.rs:1047] received signal for unknown child pid 10
+W0624 12:06:50.056774 1796804 hyperactor/src/proc.rs:1047] received signal for unknown child pid 27
+W0624 12:06:50.056820 1796807 hyperactor/src/proc.rs:1047] received signal for unknown child pid 27
+W0624 12:06:50.056913 1796810 hyperactor/src/proc.rs:1047] received signal for unknown child pid 27
+W0624 12:06:50.056920 1796812 hyperactor/src/proc.rs:1047] received signal for unknown child pid 27
+W0624 12:06:50.057398 1796807 hyperactor/src/proc.rs:1047] received signal for unknown child pid 28
+W0624 12:06:50.057398 1796804 hyperactor/src/proc.rs:1047] received signal for unknown child pid 28
+W0624 12:06:50.057467 1796812 hyperactor/src/proc.rs:1047] received signal for unknown child pid 28
+W0624 12:06:50.057467 1796810 hyperactor/src/proc.rs:1047] received signal for unknown child pid 28
+W0624 12:06:50.058367 1819301 hyperactor/src/proc.rs:1047] received signal for unknown child pid 14
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='37', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[Generator-0] generated DeepResearchRequest(initial_prompt='25', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=code)'], policies=[3], latest_turn=1, action='code', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 3 on turn 1.
+[Router] Sending DeepResearchRequest(initial_prompt='25', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=code)'], policies=[3], latest_turn=1, action='code', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) to coder queue
+[Coder] Browser queue is full, retrying...
+[Coder] Received DeepResearchRequest(initial_prompt='25', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=code)'], policies=[3], latest_turn=1, action='code', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) from code
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='37', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='38', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[Generator-1] generated DeepResearchRequest(initial_prompt='31', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=stop)'], policies=[3], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 3 on turn 1.
+[Router] Sending DeepResearchRequest(initial_prompt='31', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=stop)'], policies=[3], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) to scorer queue
+[Scorer-2] Scored DeepResearchRequest(initial_prompt='31', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=stop)'], policies=[3], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0), pushing to learner
+[Trainer,step=3] Trained policy 4 on batch ([DeepResearchRequest(initial_prompt='27',
+                     events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, '
+                             '3],action=stop)'],
+                     policies=[3],
+                     latest_turn=1,
+                     action='stop',
+                     coder_id=None,
+                     browser_id=None,
+                     generator_id=0,
+                     processed_browser_requests=0,
+                     processed_code_requests=0,
+                     score=0),
+ DeepResearchRequest(initial_prompt='19',
+                     events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, '
+                             '3],action=browse)',
+                             'browser(0,browse)',
+                             'generation(weights=[3, 3, 3, 3, 3, 3, 3, '
+                             '3],action=stop)'],
+                     policies=[3, 3],
+                     latest_turn=2,
+                     action='stop',
+                     coder_id=None,
+                     browser_id=0,
+                     generator_id=0,
+                     processed_browser_requests=1,
+                     processed_code_requests=0,
+                     score=0),
+ DeepResearchRequest(initial_prompt='29',
+                     events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, '
+                             '3],action=stop)'],
+                     policies=[3],
+                     latest_turn=1,
+                     action='stop',
+                     coder_id=None,
+                     browser_id=None,
+                     generator_id=0,
+                     processed_browser_requests=0,
+                     processed_code_requests=0,
+                     score=0),
+ DeepResearchRequest(initial_prompt='31',
+                     events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, '
+                             '3],action=stop)'],
+                     policies=[3],
+                     latest_turn=1,
+                     action='stop',
+                     coder_id=None,
+                     browser_id=None,
+                     generator_id=0,
+                     processed_browser_requests=0,
+                     processed_code_requests=0,
+                     score=0)]). Staleness: [0.0, 0.0, 0.0, 0.0]
+[Trainer] Published weights for version 4
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='38', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='39', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[Generator-0] generated DeepResearchRequest(initial_prompt='21', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=browse)', 'browser(0,browse)', 'generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=stop)'], policies=[3, 3], latest_turn=2, action='stop', coder_id=None, browser_id=0, generator_id=0, processed_browser_requests=1, processed_code_requests=0, score=0) with version 3 on turn 2.
+[Generator-0] Updating weights to 4
+[Router] Sending DeepResearchRequest(initial_prompt='21', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=browse)', 'browser(0,browse)', 'generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=stop)'], policies=[3, 3], latest_turn=2, action='stop', coder_id=None, browser_id=0, generator_id=0, processed_browser_requests=1, processed_code_requests=0, score=0) to scorer queue
+[Scorer-2] Scored DeepResearchRequest(initial_prompt='21', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=browse)', 'browser(0,browse)', 'generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=stop)'], policies=[3, 3], latest_turn=2, action='stop', coder_id=None, browser_id=0, generator_id=0, processed_browser_requests=1, processed_code_requests=0, score=0), pushing to learner
+[Generator-1] generated DeepResearchRequest(initial_prompt='32', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=browse)'], policies=[3], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 3 on turn 1.
+[Generator-1] Updating weights to 4
+[Router] Sending DeepResearchRequest(initial_prompt='32', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=browse)'], policies=[3], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) to browser queue
+[Browser] Received DeepResearchRequest(initial_prompt='32', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=browse)'], policies=[3], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) from browse
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='39', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+W0624 12:06:50.251525 1793702 hyperactor/src/proc.rs:1047] received signal for unknown child pid 26
+W0624 12:06:50.251595 1793703 hyperactor/src/proc.rs:1047] received signal for unknown child pid 26
+W0624 12:06:50.251636 1793699 hyperactor/src/proc.rs:1047] received signal for unknown child pid 26
+W0624 12:06:50.251651 1793701 hyperactor/src/proc.rs:1047] received signal for unknown child pid 26
+W0624 12:06:50.252884 1808632 hyperactor/src/proc.rs:1047] received signal for unknown child pid 3
+W0624 12:06:50.252899 1808628 hyperactor/src/proc.rs:1047] received signal for unknown child pid 3
+W0624 12:06:50.904840 1793699 hyperactor/src/proc.rs:1047] received signal for unknown child pid 27
+W0624 12:06:50.904857 1793703 hyperactor/src/proc.rs:1047] received signal for unknown child pid 27
+W0624 12:06:50.904853 1793702 hyperactor/src/proc.rs:1047] received signal for unknown child pid 27
+W0624 12:06:50.904947 1793701 hyperactor/src/proc.rs:1047] received signal for unknown child pid 27
+W0624 12:06:50.906342 1800943 hyperactor/src/proc.rs:1047] received signal for unknown child pid 5
+W0624 12:06:50.906375 1800944 hyperactor/src/proc.rs:1047] received signal for unknown child pid 5
+W0624 12:06:50.922549 1796810 hyperactor/src/proc.rs:1047] received signal for unknown child pid 29
+W0624 12:06:50.922600 1796807 hyperactor/src/proc.rs:1047] received signal for unknown child pid 29
+W0624 12:06:50.922744 1796812 hyperactor/src/proc.rs:1047] received signal for unknown child pid 29
+W0624 12:06:50.922886 1796804 hyperactor/src/proc.rs:1047] received signal for unknown child pid 29
+W0624 12:06:50.923890 1820382 hyperactor/src/proc.rs:1047] received signal for unknown child pid 13
+W0624 12:06:51.688088 1793702 hyperactor/src/proc.rs:1047] received signal for unknown child pid 28
+W0624 12:06:51.688097 1793701 hyperactor/src/proc.rs:1047] received signal for unknown child pid 28
+W0624 12:06:51.688202 1793703 hyperactor/src/proc.rs:1047] received signal for unknown child pid 28
+W0624 12:06:51.688316 1793699 hyperactor/src/proc.rs:1047] received signal for unknown child pid 28
+W0624 12:06:51.689423 1819301 hyperactor/src/proc.rs:1047] received signal for unknown child pid 15
+W0624 12:06:51.757752 1796804 hyperactor/src/proc.rs:1047] received signal for unknown child pid 30
+W0624 12:06:51.757757 1796810 hyperactor/src/proc.rs:1047] received signal for unknown child pid 30
+W0624 12:06:51.757751 1796807 hyperactor/src/proc.rs:1047] received signal for unknown child pid 30
+W0624 12:06:51.757802 1796812 hyperactor/src/proc.rs:1047] received signal for unknown child pid 30
+W0624 12:06:51.759332 1800943 hyperactor/src/proc.rs:1047] received signal for unknown child pid 6
+W0624 12:06:51.759500 1800944 hyperactor/src/proc.rs:1047] received signal for unknown child pid 6
+W0624 12:06:51.760457 1811580 hyperactor/src/proc.rs:1047] received signal for unknown child pid 11
+W0624 12:06:51.760484 1811577 hyperactor/src/proc.rs:1047] received signal for unknown child pid 11
+W0624 12:06:51.760509 1811567 hyperactor/src/proc.rs:1047] received signal for unknown child pid 11
+W0624 12:06:51.760538 1811575 hyperactor/src/proc.rs:1047] received signal for unknown child pid 11
+W0624 12:06:51.760585 1811571 hyperactor/src/proc.rs:1047] received signal for unknown child pid 11
+W0624 12:06:51.760591 1811565 hyperactor/src/proc.rs:1047] received signal for unknown child pid 11
+W0624 12:06:51.760601 1811579 hyperactor/src/proc.rs:1047] received signal for unknown child pid 11
+W0624 12:06:51.760625 1811582 hyperactor/src/proc.rs:1047] received signal for unknown child pid 11
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='40', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[Generator-0] generated DeepResearchRequest(initial_prompt='25', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=code)', 'coder(0)-call-code', 'generation(weights=[4, 4, 4, 4, 4, 4, 4, 4],action=stop)'], policies=[3, 4], latest_turn=2, action='stop', coder_id=0, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=1, score=0) with version 4 on turn 2.
+[Router] Sending DeepResearchRequest(initial_prompt='25', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=code)', 'coder(0)-call-code', 'generation(weights=[4, 4, 4, 4, 4, 4, 4, 4],action=stop)'], policies=[3, 4], latest_turn=2, action='stop', coder_id=0, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=1, score=0) to scorer queue
+[Scorer-3] Scored DeepResearchRequest(initial_prompt='25', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=code)', 'coder(0)-call-code', 'generation(weights=[4, 4, 4, 4, 4, 4, 4, 4],action=stop)'], policies=[3, 4], latest_turn=2, action='stop', coder_id=0, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=1, score=0), pushing to learner
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='40', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[Generator-0] generated DeepResearchRequest(initial_prompt='32', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=browse)', 'browser(0,browse)', 'generation(weights=[4, 4, 4, 4, 4, 4, 4, 4],action=stop)'], policies=[3, 4], latest_turn=2, action='stop', coder_id=None, browser_id=0, generator_id=0, processed_browser_requests=1, processed_code_requests=0, score=0) with version 4 on turn 2.
+[Router] Sending DeepResearchRequest(initial_prompt='32', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=browse)', 'browser(0,browse)', 'generation(weights=[4, 4, 4, 4, 4, 4, 4, 4],action=stop)'], policies=[3, 4], latest_turn=2, action='stop', coder_id=None, browser_id=0, generator_id=0, processed_browser_requests=1, processed_code_requests=0, score=0) to scorer queue
+[Scorer-0] Scored DeepResearchRequest(initial_prompt='32', events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, 3],action=browse)', 'browser(0,browse)', 'generation(weights=[4, 4, 4, 4, 4, 4, 4, 4],action=stop)'], policies=[3, 4], latest_turn=2, action='stop', coder_id=None, browser_id=0, generator_id=0, processed_browser_requests=1, processed_code_requests=0, score=0), pushing to learner
+[Generator-1] generated DeepResearchRequest(initial_prompt='34', events=['generation(weights=[4, 4, 4, 4, 4, 4, 4, 4],action=code)'], policies=[4], latest_turn=1, action='code', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 4 on turn 1.
+[Router] Sending DeepResearchRequest(initial_prompt='34', events=['generation(weights=[4, 4, 4, 4, 4, 4, 4, 4],action=code)'], policies=[4], latest_turn=1, action='code', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) to coder queue
+[Coder] Received DeepResearchRequest(initial_prompt='34', events=['generation(weights=[4, 4, 4, 4, 4, 4, 4, 4],action=code)'], policies=[4], latest_turn=1, action='code', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) from code
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='40', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='41', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='42', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 1
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] putting request DeepResearchRequest(initial_prompt='42', events=[], policies=[], latest_turn=0, action=None, coder_id=None, browser_id=None, generator_id=None, processed_browser_requests=0, processed_code_requests=0, score=0) to generator 0
+[Generator-0] generated DeepResearchRequest(initial_prompt='28', events=['generation(weights=[4, 4, 4, 4, 4, 4, 4, 4],action=browse)'], policies=[4], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 4 on turn 1.
+[Router] Sending DeepResearchRequest(initial_prompt='28', events=['generation(weights=[4, 4, 4, 4, 4, 4, 4, 4],action=browse)'], policies=[4], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) to browser queue
+[Browser] Received DeepResearchRequest(initial_prompt='28', events=['generation(weights=[4, 4, 4, 4, 4, 4, 4, 4],action=browse)'], policies=[4], latest_turn=1, action='browse', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) from browse
+[Generator-1] generated DeepResearchRequest(initial_prompt='36', events=['generation(weights=[4, 4, 4, 4, 4, 4, 4, 4],action=stop)'], policies=[4], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 4 on turn 1.
+[Router] Sending DeepResearchRequest(initial_prompt='36', events=['generation(weights=[4, 4, 4, 4, 4, 4, 4, 4],action=stop)'], policies=[4], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) to scorer queue
+[Scorer-0] Scored DeepResearchRequest(initial_prompt='36', events=['generation(weights=[4, 4, 4, 4, 4, 4, 4, 4],action=stop)'], policies=[4], latest_turn=1, action='stop', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0), pushing to learner
+W0624 12:06:52.412103 1793701 hyperactor/src/proc.rs:1047] received signal for unknown child pid 29
+W0624 12:06:52.412092 1793703 hyperactor/src/proc.rs:1047] received signal for unknown child pid 29
+W0624 12:06:52.412152 1793699 hyperactor/src/proc.rs:1047] received signal for unknown child pid 29
+W0624 12:06:52.412154 1793702 hyperactor/src/proc.rs:1047] received signal for unknown child pid 29
+W0624 12:06:52.413402 1796804 hyperactor/src/proc.rs:1047] received signal for unknown child pid 31
+W0624 12:06:52.413488 1796807 hyperactor/src/proc.rs:1047] received signal for unknown child pid 31
+W0624 12:06:52.413593 1796812 hyperactor/src/proc.rs:1047] received signal for unknown child pid 31
+W0624 12:06:52.413640 1796810 hyperactor/src/proc.rs:1047] received signal for unknown child pid 31
+I0624 12:06:52.424524 1792242 hyperactor/src/channel/net.rs:1189] received parent token cancellation
+I0624 12:06:52.424525 1792242 hyperactor/src/channel/net.rs:1189] received parent token cancellation
+I0624 12:06:52.424580 1792242 hyperactor/src/channel/net.rs:1189] received parent token cancellation
+I0624 12:06:52.424598 1792242 hyperactor/src/channel/net.rs:1189] received parent token cancellation
+I0624 12:06:52.424567 1792242 hyperactor/src/channel/net.rs:1189] received parent token cancellation
+I0624 12:06:52.424612 1792242 hyperactor/src/channel/net.rs:1189] received parent token cancellation
+[Trainer,step=4] Trained policy 5 on batch ([DeepResearchRequest(initial_prompt='21',
+                     events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, '
+                             '3],action=browse)',
+                             'browser(0,browse)',
+                             'generation(weights=[3, 3, 3, 3, 3, 3, 3, '
+                             '3],action=stop)'],
+                     policies=[3, 3],
+                     latest_turn=2,
+                     action='stop',
+                     coder_id=None,
+                     browser_id=0,
+                     generator_id=0,
+                     processed_browser_requests=1,
+                     processed_code_requests=0,
+                     score=0),
+ DeepResearchRequest(initial_prompt='25',
+                     events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, '
+                             '3],action=code)',
+                             'coder(0)-call-code',
+                             'generation(weights=[4, 4, 4, 4, 4, 4, 4, '
+                             '4],action=stop)'],
+                     policies=[3, 4],
+                     latest_turn=2,
+                     action='stop',
+                     coder_id=0,
+                     browser_id=None,
+                     generator_id=0,
+                     processed_browser_requests=0,
+                     processed_code_requests=1,
+                     score=0),
+ DeepResearchRequest(initial_prompt='32',
+                     events=['generation(weights=[3, 3, 3, 3, 3, 3, 3, '
+                             '3],action=browse)',
+                             'browser(0,browse)',
+                             'generation(weights=[4, 4, 4, 4, 4, 4, 4, '
+                             '4],action=stop)'],
+                     policies=[3, 4],
+                     latest_turn=2,
+                     action='stop',
+                     coder_id=None,
+                     browser_id=0,
+                     generator_id=0,
+                     processed_browser_requests=1,
+                     processed_code_requests=0,
+                     score=0),
+ DeepResearchRequest(initial_prompt='36',
+                     events=['generation(weights=[4, 4, 4, 4, 4, 4, 4, '
+                             '4],action=stop)'],
+                     policies=[4],
+                     latest_turn=1,
+                     action='stop',
+                     coder_id=None,
+                     browser_id=None,
+                     generator_id=0,
+                     processed_browser_requests=0,
+                     processed_code_requests=0,
+                     score=0)]). Staleness: [1.0, 0.5, 0.5, 0.0]
+[Trainer] Finished training. Shutting down.
+[PromptGenerator] Queue is full, retrying...
+[PromptGenerator] Shutting down.
+[Scorer-1] Shutting down.
+[Scorer-2] Shutting down.
+[Scorer-3] Shutting down.
+[Scorer-0] Shutting down.
+[Generator-0] generated DeepResearchRequest(initial_prompt='34', events=['generation(weights=[4, 4, 4, 4, 4, 4, 4, 4],action=code)', 'coder(0)-call-code', 'generation(weights=[4, 4, 4, 4, 4, 4, 4, 4],action=browse)'], policies=[4, 4], latest_turn=2, action='browse', coder_id=0, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=1, score=0) with version 4 on turn 2.
+[Generator-0] Shutting down.
+[Generator-1] generated DeepResearchRequest(initial_prompt='37', events=['generation(weights=[4, 4, 4, 4, 4, 4, 4, 4],action=code)'], policies=[4], latest_turn=1, action='code', coder_id=None, browser_id=None, generator_id=0, processed_browser_requests=0, processed_code_requests=0, score=0) with version 4 on turn 1.
+[Generator-1] Shutting down.
+[System] all tasks completed and shut down.
+I0624 12:06:52.424683 1792242 hyperactor/src/channel/net.rs:1189] received parent token cancellation
+I0624 12:06:52.424702 1792242 hyperactor/src/channel/net.rs:1189] received parent token cancellation
+I0624 12:06:52.424716 1792242 hyperactor/src/channel/net.rs:1189] received parent token cancellation
