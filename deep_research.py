@@ -1,27 +1,7 @@
 """
-Expresses the skeleton of an asynchronous RL loop.
-
-This module demonstrates an asynchronous RL workflow using a
-"loop-based" approach. It showcases control flow, queues, and threading to orchestrate
-a distributed RL system where orchestration and control flow are exposed as first-class
-concerns directly to the user.
-
-The system consists of:
-1. Multiple generators (policies) that produce responses based on prompts
-2. Multiple scorers that evaluate generations and provide feedback
-3. A learner that trains on experiences collected from the system
-4. A multi-turn setup where generators can have multiple interactions with the environment
-
-The way a user is intended to interact with this system is by starting with toy entities
-that implement the above components to get a sense of the control flow.
-
-
-Key components:
-- Prompt queue: Manages raw text data and allows policies to interact with prior steps
-- Generation queue: Collects outputs from generators to be scored
-- Experience queue: Collects scored experiences for training
-- PolicyStore: Manages versioned policy weights for synchronization
 """
+
+import pprint
 
 # pyre-unsafe
 import queue
@@ -30,23 +10,30 @@ import threading
 import time
 from dataclasses import dataclass
 
-from monarch.actor_mesh import ValueMesh
+from deep_research_utils import (
+    Browser,
+    CodeExecutor,
+    DeepResearchGenerator,
+    DeepResearchRequest,
+    Learner,
+    PolicyStore,
+    PriorityQueue,
+    Scorer,
+)
 from monarch.proc_mesh import proc_mesh
-from utils import Generator, Learner, PolicyStore, PriorityQueue, Scorer
 
 
 @dataclass
-class Config:
-    # Throughput knobs
+class DeepResearchConfig:
+    # Entity knobs
     num_generators: int = 2
     num_scorers: int = 4
-
-    # Environment
-    num_multi_turn_steps: int = 2
+    num_browsers: int = 1
+    num_coders: int = 1
 
     # Trainer knobs
     num_train_steps: int = 5
-    train_batch_size: int = 2
+    train_batch_size: int = 4
     num_envs: int = 4
 
     # Parallelism knobs
@@ -55,11 +42,13 @@ class Config:
     sp: int = 1  # scorer parallelism
 
 
-config = Config()
+config = DeepResearchConfig()
 
 
 # Main control loops
-def prompt_generator(prompt_queues: list[PriorityQueue], stop_event: threading.Event):
+def prompt_generator(
+    generator_queues: list[PriorityQueue], stop_event: threading.Event
+):
     """
     Generates prompts and puts them into the prompt queues.
 
@@ -72,7 +61,7 @@ def prompt_generator(prompt_queues: list[PriorityQueue], stop_event: threading.E
     and feed initial prompts into the system to start the RL loop.
 
     Args:
-        prompt_queues: A list of PriorityQueue objects to distribute prompts to
+        generator_queues: A list of PriorityQueue objects to distribute prompts to
         stop_event: A threading.Event that signals when to stop generating prompts
     """
     prompt_id = 0
@@ -82,20 +71,20 @@ def prompt_generator(prompt_queues: list[PriorityQueue], stop_event: threading.E
         try:
             # Here, you would replace prompt with an actual torch data loader
             # or some other text iterator...
-            prompt = str(prompt_id)
-            prompt_queue = prompt_queues[queue_id]
+            request = DeepResearchRequest(initial_prompt=str(prompt_id), latest_turn=0)
+            generator_queue = generator_queues[queue_id]
 
             queue_id += 1
             if queue_id == config.num_generators:
                 queue_id = 0
 
             print(
-                "[PromptGenerator] putting prompt {} to generator {}".format(
-                    prompt, queue_id
+                "[PromptGenerator] putting request {} to generator {}".format(
+                    request, queue_id
                 )
             )
             try:
-                prompt_queue.put((prompt, 0), priority=0, timeout=0.5)
+                generator_queue.put(request, priority=request.latest_turn, timeout=0.5)
                 prompt_id += 1
             except queue.Full:
                 print("[PromptGenerator] Queue is full, retrying...")
@@ -109,9 +98,9 @@ def prompt_generator(prompt_queues: list[PriorityQueue], stop_event: threading.E
 
 def generate_loop(
     generator_id: int,
-    generator: Generator,
-    prompt_queue: queue.Queue,
-    generation_queue: queue.Queue,
+    generator: DeepResearchGenerator,
+    generator_queue: queue.Queue,
+    executor_queue: queue.Queue,
     store: PolicyStore,
     stop_event: threading.Event,
 ):
@@ -129,9 +118,9 @@ def generate_loop(
 
     Args:
         generator_id: Unique identifier for this generator
-        generator: The Generator instance that produces responses
-        prompt_queue: Queue containing prompts to process
-        generation_queue: Queue to put generated responses into
+        generator: The DeepResearchGenerator instance that produces responses
+        generator_queue: Queue containing prompts to process
+        executor_queue: Queue to put generated responses into
         store: PolicyStore for synchronizing model weights
         stop_event: Signal to terminate the loop
     """
@@ -144,41 +133,130 @@ def generate_loop(
     while not stop_event.is_set():
         latest_version = store.get_latest_version()
         if latest_version != version:
-            print(
-                f"[Generator-{generator_id}] Updating weights to {store.get_latest_weights()}"
-            )
-            generator.update_weights.call(store.get_latest_weights()).get()
+            print(f"[Generator-{generator_id}] Updating weights to {latest_version}")
+            generator.update_weights.call(
+                weights=store.get_latest_weights(), version=latest_version
+            ).get()
             version = latest_version
 
         try:
-            prompt, turn_number = prompt_queue.get(timeout=0.5)
+            data: DeepResearchRequest = generator_queue.get(timeout=0.5)
         except queue.Empty:
             continue
-        time.sleep(random.uniform(0.5, 1))  # simulate inference
 
-        generation = generator.generate.call(prompt).get()
+        time.sleep(random.uniform(0.5, 1))  # simulate inference
+        generation = generator.generate.call(data).get()
         # generation returns a ValueMesh which we need to gather
         # imagine that Monarch adds an API for this later, like generation.to_tensor()
         # creates a tensor of size [num_generators, ...]
-        generation = "".join([g for g in generation._values])
+        generation = generation._values[0]
         print(
-            f"[Generator-{generator_id}] generated {generation} with version {version} on turn {turn_number}."
+            f"[Generator-{generator_id}] generated {generation} with version {version} on turn {generation.latest_turn}."
         )
         try:
-            generation_queue.put(
-                (generator_id, generation, version, turn_number), timeout=0.5
-            )
+            executor_queue.put(generation, timeout=0.5)
         except queue.Full:
             print(f"[Generator-{generator_id}] Generation queue is full, retrying...")
 
     print(f"[Generator-{generator_id}] Shutting down.")
 
 
+def router_loop(
+    executor_queue: queue.Queue,
+    browser_queues: list[queue.Queue],
+    coder_queues: list[queue.Queue],
+    scorer_queue: queue.Queue,
+    stop_event: threading.Event,
+):
+    coder_id = 0
+    browser_id = 0
+    while not stop_event.is_set():
+        try:
+            data = executor_queue.get(timeout=0.5)
+        except queue.Empty:
+            continue
+
+        dest = None
+        if data.action == "stop":
+            print(f"[Router] Sending {data} to scorer queue")
+            dest = scorer_queue
+        elif data.action == "code":
+            print(f"[Router] Sending {data} to coder queue")
+            if data.coder_id:
+                dest = coder_queues[data.coder_id]
+            else:
+                dest = coder_queues[coder_id]
+                coder_id += 1
+                if coder_id == config.num_coders:
+                    coder_id = 0
+        elif data.action == "browse":
+            print(f"[Router] Sending {data} to browser queue")
+            if data.browser_id:
+                dest = browser_queues[data.browser_id]
+            else:
+                dest = browser_queues[browser_id]
+                browser_id += 1
+                if browser_id == config.num_browsers:
+                    browser_id = 0
+        else:
+            raise ValueError(f"Unknown action: {data.action}")
+
+        try:
+            dest.put(data, timeout=0.5)
+        except queue.Full:
+            print("[Router] Browser queue is full, retrying...")
+
+
+def browser_loop(
+    browser: Browser,
+    browser_queue: queue.Queue,
+    generation_queues: list[PriorityQueue],
+    stop_event: threading.Event,
+):
+    while not stop_event.is_set():
+        try:
+            data: DeepResearchRequest = browser_queue.get(timeout=0.5)
+        except queue.Empty:
+            continue
+
+        print(f"[Browser] Received {data} from {data.action}")
+        data = browser.step.call_one(data).get()
+
+        try:
+            generation_queues[data.generator_id].put(
+                data, priority=data.latest_turn, timeout=0.5
+            )
+        except queue.Full:
+            print("[Router] Browser queue is full, retrying...")
+
+
+def coder_loop(
+    code_executor: CodeExecutor,
+    coder_queue: queue.Queue,
+    generation_queues: list[PriorityQueue],
+    stop_event: threading.Event,
+):
+    while not stop_event.is_set():
+        try:
+            data: DeepResearchRequest = coder_queue.get(timeout=0.5)
+        except queue.Empty:
+            continue
+
+        print(f"[Coder] Received {data} from {data.action}")
+        data = code_executor.step.call_one(data).get()
+
+        try:
+            generation_queues[data.generator_id].put(
+                data, priority=data.latest_turn, timeout=0.5
+            )
+        except queue.Full:
+            print("[Coder] Browser queue is full, retrying...")
+
+
 def score_loop(
     scorer_id: int,
     scorer: Scorer,
-    generation_queue: queue.Queue,
-    prompt_queues: list[queue.Queue],
+    scorer_queue: queue.Queue,
     experience_queue: queue.Queue,
     stop_event: threading.Event,
 ):
@@ -198,36 +276,25 @@ def score_loop(
     Args:
         scorer_id: Unique identifier for this scorer
         scorer: The Scorer instance that evaluates responses
-        generation_queue: Queue containing generations to score
-        prompt_queues: List of queues to return scored responses to for continued interaction
+        executor_queue: Queue containing generations to score
+        generator_queues: List of queues to return scored responses to for continued interaction
         experience_queue: Queue to put completed experiences into for training
         stop_event: Signal to terminate the loop
     """
     while not stop_event.is_set():
         try:
-            generation_id, generation, version, turn_number = generation_queue.get(
-                timeout=0.5
-            )
+            data: DeepResearchRequest = scorer_queue.get(timeout=0.5)
         except queue.Empty:
             continue
 
-        scored = scorer.score.call(generation).get()
+        scored = scorer.score.call(data).get()
         # again doing a gather here, but imagine Monarch provides primitives for this.
-        scored = "".join([s for s in scored._values])
-        if turn_number >= config.num_multi_turn_steps:
-            try:
-                print(f"[Scorer-{scorer_id}] Scored {scored}, pushing to learner")
-                experience_queue.put((scored, version), timeout=0.5)
-            except queue.Full:
-                print(f"[Scorer-{scorer_id}] Experience queue is full, retrying...")
-        else:
-            try:
-                print(f"[Scorer-{scorer_id}] Scored {scored}, returning to generator")
-                prompt_queues[generation_id].put(
-                    (scored, turn_number + 1), priority=turn_number + 1, timeout=0.5
-                )
-            except queue.Full:
-                print(f"[Scorer-{scorer_id}] Prompt queue is full, retrying...")
+        scored = scored._values[0]
+        try:
+            print(f"[Scorer-{scorer_id}] Scored {scored}, pushing to learner")
+            experience_queue.put(scored, timeout=0.5)
+        except queue.Full:
+            print(f"[Scorer-{scorer_id}] Experience queue is full, retrying...")
 
     print(f"[Scorer-{scorer_id}] Shutting down.")
 
@@ -267,15 +334,16 @@ def train_loop(
         )
         print(f"[Trainer] Published weights for version {step}")
         batch = []
-        staleness = []
+        stalenesses = []
         while len(batch) < config.train_batch_size:
-            scored, version = experience_queue.get()
-            batch.append(scored)
-            staleness.append(step - version)
+            data = experience_queue.get()
+            batch.append(data)
+            staleness = step - sum(data.policies) / len(data.policies)
+            stalenesses.append(staleness)
         learner.step.call(batch).get()
         time.sleep(0.2)
         print(
-            f"[Trainer,step={step}] Trained policy {step+1} on batch ({batch}). Staleness: {staleness}"
+            f"[Trainer,step={step}] Trained policy {step+1} on batch ({pprint.pformat(batch)}). Staleness: {stalenesses}"
         )
     print("[Trainer] Finished training. Shutting down.")
     stop_event.set()
@@ -291,21 +359,32 @@ def main():
     ]
     scorer_procs = [proc_mesh(gpus=config.sp).get() for _ in range(config.num_scorers)]
     learn_proc = proc_mesh(gpus=config.lp).get()
-    env_procs = [proc_mesh(gpus=1).get() for _ in range(config.num_envs)]
+    browser_procs = [proc_mesh(gpus=1).get() for _ in range(config.num_browsers)]
+    coder_procs = [proc_mesh(gpus=1).get() for _ in range(config.num_coders)]
 
-    generators = [p.spawn("generator", Generator).get() for p in generation_procs]
+    generators = [
+        p.spawn("generator", DeepResearchGenerator).get() for p in generation_procs
+    ]
     scorers = [p.spawn("scorer", Scorer).get() for p in scorer_procs]
     learner = learn_proc.spawn("learner", Learner).get()
+    browsers = [p.spawn("browser", Browser).get() for p in browser_procs]
+    coders = [p.spawn("coder", CodeExecutor).get() for p in coder_procs]
 
-    prompt_queues = [PriorityQueue(maxsize=8) for _ in range(config.num_generators)]
-    generation_queue = queue.Queue()
+    # probably worth introducing some kind of load balance primitives...
+    generator_queues = [PriorityQueue(maxsize=4) for _ in range(config.num_generators)]
     experience_queue = queue.Queue()
+    executor_queue = queue.Queue()
+    browser_queues = [queue.Queue() for _ in range(config.num_browsers)]
+    coder_queues = [queue.Queue() for _ in range(config.num_coders)]
+    scorer_queue = queue.Queue()
     store = PolicyStore()
     stop_event = threading.Event()
 
     threads = (
         [
-            threading.Thread(target=prompt_generator, args=(prompt_queues, stop_event)),
+            threading.Thread(
+                target=prompt_generator, args=(generator_queues, stop_event)
+            ),
             threading.Thread(
                 target=train_loop,
                 args=(experience_queue, learner, store, stop_event),
@@ -317,8 +396,7 @@ def main():
                 args=(
                     i,
                     scorers[i],
-                    generation_queue,
-                    prompt_queues,
+                    scorer_queue,
                     experience_queue,
                     stop_event,
                 ),
@@ -331,13 +409,49 @@ def main():
                 args=(
                     i,
                     generators[i],
-                    prompt_queues[i],
-                    generation_queue,
+                    generator_queues[i],
+                    executor_queue,
                     store,
                     stop_event,
                 ),
             )
             for i in range(config.num_generators)
+        ]
+        + [
+            threading.Thread(
+                target=router_loop,
+                args=(
+                    executor_queue,
+                    browser_queues,
+                    coder_queues,
+                    scorer_queue,
+                    stop_event,
+                ),
+            )
+        ]
+        + [
+            threading.Thread(
+                target=browser_loop,
+                args=(
+                    browsers[i],
+                    browser_queues[i],
+                    generator_queues,
+                    stop_event,
+                ),
+            )
+            for i in range(config.num_browsers)
+        ]
+        + [
+            threading.Thread(
+                target=coder_loop,
+                args=(
+                    coders[i],
+                    coder_queues[i],
+                    generator_queues,
+                    stop_event,
+                ),
+            )
+            for i in range(config.num_coders)
         ]
     )
 
