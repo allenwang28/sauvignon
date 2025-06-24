@@ -111,6 +111,12 @@ class DeepResearchGenerator(Actor):
         self.version = version
 
 
+class Environment(Actor):
+    @endpoint
+    def step():
+        pass
+
+
 class Learner(Actor):
     def __init__(self):
         self.weights = 0

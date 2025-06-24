@@ -35,6 +35,7 @@ from deep_research_utils import (
     CodeExecutor,
     DeepResearchGenerator,
     DeepResearchRequest,
+    Environment,
     Learner,
     PolicyStore,
     PriorityQueue,
@@ -243,14 +244,14 @@ def router_loop(
             print("[Router] Browser queue is full, retrying...")
 
 
-def browser_loop(
-    browser: Browser,
-    browser_queue: queue.Queue,
+def env_loop(
+    env: Environment,
+    env_queue: queue.Queue,
     generation_queues: list[PriorityQueue],
     stop_event: threading.Event,
 ):
     """
-    Executes web browsing actions and returns results to generators.
+    Executes environment actions and return results to generators.
 
     This function:
     1. Takes browsing requests from its queue
@@ -265,56 +266,16 @@ def browser_loop(
     """
     while not stop_event.is_set():
         try:
-            data: DeepResearchRequest = browser_queue.get(timeout=0.5)
+            data: DeepResearchRequest = env_queue.get(timeout=0.5)
         except queue.Empty:
             continue
-
-        print(f"[Browser] Received {data} from {data.action}")
-        data = browser.step.call_one(data).get()
-
+        data = env.step.call_one(data).get()
         try:
             generation_queues[data.generator_id].put(
                 data, priority=data.latest_turn, timeout=0.5
             )
         except queue.Full:
             print("[Router] Browser queue is full, retrying...")
-
-
-def coder_loop(
-    code_executor: CodeExecutor,
-    coder_queue: queue.Queue,
-    generation_queues: list[PriorityQueue],
-    stop_event: threading.Event,
-):
-    """
-    Executes code actions and returns results to generators.
-
-    This function:
-    1. Takes code execution requests from its queue
-    2. Executes the code using the code executor agent
-    3. Returns results back to the appropriate generator queue
-
-    Args:
-        code_executor: The CodeExecutor instance that runs code
-        coder_queue: Queue containing code execution requests
-        generation_queues: List of queues to return results to generators
-        stop_event: Signal to terminate the loop
-    """
-    while not stop_event.is_set():
-        try:
-            data: DeepResearchRequest = coder_queue.get(timeout=0.5)
-        except queue.Empty:
-            continue
-
-        print(f"[Coder] Received {data} from {data.action}")
-        data = code_executor.step.call_one(data).get()
-
-        try:
-            generation_queues[data.generator_id].put(
-                data, priority=data.latest_turn, timeout=0.5
-            )
-        except queue.Full:
-            print("[Coder] Browser queue is full, retrying...")
 
 
 def score_loop(
@@ -390,7 +351,7 @@ def train_loop(
     for step in range(config.num_train_steps):
         weights = learner.get_weights.call().get()
         # again doing a gather here, but imagine Monarch provides primitives for this.
-        weights = [w for w in weights._values]
+        weights = weights._values[0]
         store.publish_weights(
             version=step,
             weights=weights,
@@ -494,7 +455,7 @@ def main():
         ]
         + [
             threading.Thread(
-                target=browser_loop,
+                target=env_loop,
                 args=(
                     browsers[i],
                     browser_queues[i],
@@ -506,7 +467,7 @@ def main():
         ]
         + [
             threading.Thread(
-                target=coder_loop,
+                target=env_loop,
                 args=(
                     coders[i],
                     coder_queues[i],
