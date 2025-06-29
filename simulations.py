@@ -1,7 +1,4 @@
-"""Simulating the performance of different system approaches.
-
-Focus only on "data collection" in async RL.
-"""
+"""Simulating the performance of a pipelined approach."""
 
 import asyncio
 from dataclasses import dataclass, field
@@ -42,8 +39,9 @@ class SimulationConfig:
     num_math_verifiers: int = 2
     num_llm_judge_judgers: int = 1
     num_preprocess: int = 1
+    num_prompt_loaders: int = 1
     batch_size: int = 4
-    max_steps: int = 2
+    max_steps: int = 4
     policy_step_low: float = 0.5
     policy_step_high: float = 1.0
     coding_verifier_step_low: float = 0.2
@@ -58,7 +56,7 @@ class SimulationConfig:
 
 
 # Worker function for each replica
-def worker_loop(input_queue, output_queue, trace_queue, component_name, worker_idx, step_low, step_high, policy_queue=None):
+def worker_loop(input_queue, output_queue, trace_queue, component_name, worker_idx, step_low, step_high, tid, policy_queue=None):
     while True:
         idle_start = time.time()
         item = input_queue.get()
@@ -72,8 +70,8 @@ def worker_loop(input_queue, output_queue, trace_queue, component_name, worker_i
             "ph": "X",
             "ts": int(idle_start * 1e6),
             "dur": int(idle_dur * 1e6),
-            "pid": 1,  # Force all events into one process in Perfetto
-            "tid": worker_idx,
+            "pid": 1,
+            "tid": tid,
             "args": {},
         })
         req, t0 = item
@@ -89,8 +87,8 @@ def worker_loop(input_queue, output_queue, trace_queue, component_name, worker_i
             "ph": "X",
             "ts": int(t1 * 1e6),
             "dur": int((t2 - t1) * 1e6),
-            "pid": 1,  # Force all events into one process in Perfetto
-            "tid": worker_idx,
+            "pid": 1,
+            "tid": tid,
             "args": {"request": req.summary()},
         })
         # Routing logic
@@ -110,7 +108,7 @@ def worker_loop(input_queue, output_queue, trace_queue, component_name, worker_i
             output_queue.put((req, t0))
 
 # Trainer worker (batches)
-def trainer_loop(input_queue, trace_queue, batch_size, max_steps):
+def trainer_loop(input_queue, trace_queue, batch_size, max_steps, tid):
     steps = 0
     while steps < max_steps:
         batch = []
@@ -126,7 +124,7 @@ def trainer_loop(input_queue, trace_queue, batch_size, max_steps):
                 "ts": int(idle_start * 1e6),
                 "dur": int(idle_dur * 1e6),
                 "pid": 1,
-                "tid": 0,
+                "tid": tid,
                 "args": {},
             })
             if item is None:
@@ -147,12 +145,28 @@ def trainer_loop(input_queue, trace_queue, batch_size, max_steps):
                 "ts": int(t1 * 1e6),
                 "dur": int((t2 - t1) * 1e6),
                 "pid": 1,
-                "tid": 0,
+                "tid": tid,
                 "args": {"request": req.summary()},
             })
         steps += 1
     # Signal done
     return
+
+def prompt_loader_worker(policy_queue, trace_queue, prompts, loader_idx, tid):
+    import time
+    for idx, prompt in enumerate(prompts):
+        t0 = time.time()
+        req = DeepResearchRequest(initial_prompt=prompt, rank=idx)
+        policy_queue.put((req, t0))
+        trace_queue.put({
+            "name": f"prompt_loader[{loader_idx}]::step",
+            "ph": "X",
+            "ts": int(t0 * 1e6),
+            "dur": 0,
+            "pid": 1,
+            "tid": tid,
+            "args": {"prompt": prompt, "rank": idx},
+        })
 
 class MultiprocessingRunner:
     def __init__(self, config):
@@ -172,41 +186,65 @@ class MultiprocessingRunner:
         self.judger_workers = []
         self.preprocess_workers = []
         self.trainer = None
+        self.prompt_loaders = []
+        self.next_tid = 0
 
-    def start_workers(self):
+    def start_workers(self, prompts):
         cfg = self.config
+        # Prompt loaders
+        n = cfg.num_prompt_loaders
+        chunk_size = (len(prompts) + n - 1) // n
+        for i in range(n):
+            chunk = prompts[i*chunk_size:(i+1)*chunk_size]
+            tid = self.next_tid
+            self.next_tid += 1
+            p = mp.Process(target=prompt_loader_worker, args=(self.policy_queue, self.trace_queue, chunk, i, tid))
+            p.start()
+            self.prompt_loaders.append(p)
         # Policy workers
         for i in range(cfg.num_policys):
+            tid = self.next_tid
+            self.next_tid += 1
             p = mp.Process(target=worker_loop, args=(self.policy_queue, {
                 "coding_verifier": self.coding_verifier_queue,
                 "math_verifier": self.math_verifier_queue,
                 "judger": self.judger_queue,
                 "preprocess": self.preprocess_queue
-            }, self.trace_queue, "policy", i, cfg.policy_step_low, cfg.policy_step_high))
+            }, self.trace_queue, "policy", i, cfg.policy_step_low, cfg.policy_step_high, tid))
             p.start()
             self.policy_workers.append(p)
         # Coding verifier workers
         for i in range(cfg.num_coding_verifiers):
-            p = mp.Process(target=worker_loop, args=(self.coding_verifier_queue, None, self.trace_queue, "coding_verifier", i, cfg.coding_verifier_step_low, cfg.coding_verifier_step_high, self.policy_queue))
+            tid = self.next_tid
+            self.next_tid += 1
+            p = mp.Process(target=worker_loop, args=(self.coding_verifier_queue, None, self.trace_queue, "coding_verifier", i, cfg.coding_verifier_step_low, cfg.coding_verifier_step_high, tid, self.policy_queue))
             p.start()
             self.coding_verifier_workers.append(p)
         # Math verifier workers
         for i in range(cfg.num_math_verifiers):
-            p = mp.Process(target=worker_loop, args=(self.math_verifier_queue, None, self.trace_queue, "math_verifier", i, cfg.math_verifier_step_low, cfg.math_verifier_step_high, self.policy_queue))
+            tid = self.next_tid
+            self.next_tid += 1
+            p = mp.Process(target=worker_loop, args=(self.math_verifier_queue, None, self.trace_queue, "math_verifier", i, cfg.math_verifier_step_low, cfg.math_verifier_step_high, tid, self.policy_queue))
             p.start()
             self.math_verifier_workers.append(p)
         # Judger workers
         for i in range(cfg.num_llm_judge_judgers):
-            p = mp.Process(target=worker_loop, args=(self.judger_queue, None, self.trace_queue, "judger", i, cfg.llm_judge_judger_step_low, cfg.llm_judge_judger_step_high, self.policy_queue))
+            tid = self.next_tid
+            self.next_tid += 1
+            p = mp.Process(target=worker_loop, args=(self.judger_queue, None, self.trace_queue, "judger", i, cfg.llm_judge_judger_step_low, cfg.llm_judge_judger_step_high, tid, self.policy_queue))
             p.start()
             self.judger_workers.append(p)
         # Preprocess workers
         for i in range(cfg.num_preprocess):
-            p = mp.Process(target=worker_loop, args=(self.preprocess_queue, self.trainer_queue, self.trace_queue, "preprocess", i, cfg.preprocess_step_low, cfg.preprocess_step_high))
+            tid = self.next_tid
+            self.next_tid += 1
+            p = mp.Process(target=worker_loop, args=(self.preprocess_queue, self.trainer_queue, self.trace_queue, "preprocess", i, cfg.preprocess_step_low, cfg.preprocess_step_high, tid))
             p.start()
             self.preprocess_workers.append(p)
         # Trainer
-        self.trainer = mp.Process(target=trainer_loop, args=(self.trainer_queue, self.trace_queue, cfg.batch_size, cfg.max_steps))
+        tid = self.next_tid
+        self.next_tid += 1
+        self.trainer = mp.Process(target=trainer_loop, args=(self.trainer_queue, self.trace_queue, cfg.batch_size, cfg.max_steps, tid))
         self.trainer.start()
 
     def shutdown_workers(self):
@@ -226,13 +264,11 @@ class MultiprocessingRunner:
             p.join()
         if self.trainer:
             self.trainer.join()
+        for p in self.prompt_loaders:
+            p.join()
 
     def run(self, prompts):
-        self.start_workers()
-        # Feed prompts
-        for idx, prompt in enumerate(prompts):
-            req = DeepResearchRequest(initial_prompt=prompt, rank=idx)
-            self.policy_queue.put((req, time.time()))
+        self.start_workers(prompts)
         # Wait for trainer to finish
         self.trainer.join()
         self.shutdown_workers()
@@ -253,6 +289,7 @@ if __name__ == "__main__":
         num_math_verifiers=2,
         num_llm_judge_judgers=1,
         num_preprocess=1,
+        num_prompt_loaders=2,
         batch_size=4,
         max_steps=2,
         policy_step_low=0.5,
