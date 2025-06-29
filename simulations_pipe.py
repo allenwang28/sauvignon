@@ -1,6 +1,7 @@
 """Simulating the performance of a pipelined approach."""
 
 import asyncio
+from simulations_util import DeepResearchRequest, SimulationConfig
 from dataclasses import dataclass, field
 import random
 import time
