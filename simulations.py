@@ -4,14 +4,11 @@ Focus only on "data collection" in async RL.
 """
 
 import asyncio
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 import random
 import time
 import functools
 import matplotlib.pyplot as plt
-import json
-import os
-from typing import List, Optional
 
 
 @dataclass
@@ -22,7 +19,6 @@ class SimulationConfig:
     num_llm_judge_judgers: int = 1
     batch_size: int = 4
     max_steps: int = 100  # Number of batches to train before stopping
-    trace_output: str = "trace.json"  # Output file for Perfetto trace
 
     # Step time ranges for each component (in seconds)
     policy_step_low: float = 1.0
@@ -40,25 +36,6 @@ class SimulationConfig:
     preprocess_step_low: float = 0.2
     preprocess_step_high: float = 0.5
 
-
-@dataclass
-class DeepResearchRequest:
-    initial_prompt: str
-    rank: int = 0
-    events: List[str] = field(default_factory=list)
-    latest_turn: int = 0
-    action: Optional[str] = None
-    score: int = 0
-
-    def summary(self):
-        return {
-            "prompt": self.initial_prompt,
-            "rank": self.rank,
-            "turn": self.latest_turn,
-            "events": list(self.events),
-            "action": self.action,
-            "score": self.score,
-        }
 
 
 class Entity:
@@ -85,10 +62,9 @@ class Controller:
     async def step(self, data):
         # Round-robin selection
         entity = self.entities[self._rr_idx]
-        idx = self._rr_idx
         self._rr_idx = (self._rr_idx + 1) % self.num_entities
-        result = await entity.step(data)
-        return result, idx
+        return await entity.step(data)
+
 
 
 class MetricsCollector:
@@ -102,47 +78,13 @@ class MetricsCollector:
             'trainer': {'processed': 0, 'latencies': [], 'idle_time': 0.0},
         }
         self.start_time = time.time()
-        self.trace_events = []  # For Perfetto
-        self.pid_map = {k: i for i, k in enumerate(self.metrics.keys())}
-        self.tid_counter = 0
 
-    def record(self, component, latency, t_start=None, t_end=None, event_type="step", extra_args=None, request=None, replica_idx=0):
+    def record(self, component, latency):
         self.metrics[component]['processed'] += 1
         self.metrics[component]['latencies'].append(latency)
-        if t_start is not None and t_end is not None:
-            trace_args = extra_args or {}
-            trace_args['component'] = component
-            rank = getattr(request, 'rank', None)
-            if request is not None:
-                trace_args['request'] = request.summary() if hasattr(request, 'summary') else str(request)
-            event_name = f"{component}[{replica_idx}]::{event_type}"
-            self.trace_events.append({
-                "name": event_name,
-                "ph": "X",
-                "ts": int(t_start * 1e6),
-                "dur": int((t_end - t_start) * 1e6),
-                "pid": self.pid_map[component],
-                "tid": self.pid_map[component],
-                "args": trace_args,
-            })
 
-    def record_idle(self, component, idle_time, t_start=None, t_end=None, request=None, replica_idx=0):
+    def record_idle(self, component, idle_time):
         self.metrics[component]['idle_time'] += idle_time
-        if t_start is not None and t_end is not None:
-            trace_args = {"component": component}
-            rank = getattr(request, 'rank', None)
-            if request is not None:
-                trace_args['request'] = request.summary() if hasattr(request, 'summary') else str(request)
-            event_name = f"{component}[{replica_idx}]::idle"
-            self.trace_events.append({
-                "name": event_name,
-                "ph": "X",
-                "ts": int(t_start * 1e6),
-                "dur": int((t_end - t_start) * 1e6),
-                "pid": self.pid_map[component],
-                "tid": self.pid_map[component],
-                "args": trace_args,
-            })
 
     def report(self):
         elapsed = time.time() - self.start_time
@@ -204,29 +146,25 @@ class PipelinedRunner:
         self.shutdown_event = asyncio.Event()
 
     async def prompt_loader(self, prompts):
-        for idx, prompt in enumerate(prompts):
+        for prompt in prompts:
             if self.shutdown_event.is_set():
                 break
             t0 = time.time()
-            req = DeepResearchRequest(initial_prompt=prompt, rank=idx)
-            await self.policy_queue.put((req, t0))
+            await self.policy_queue.put((prompt, t0))
 
     async def policy_loop(self):
         while not self.shutdown_event.is_set():
             idle_start = time.time()
             try:
-                req, t0 = await asyncio.wait_for(self.policy_queue.get(), timeout=0.1)
+                data, t0 = await asyncio.wait_for(self.policy_queue.get(), timeout=0.1)
             except asyncio.TimeoutError:
                 continue
             idle_end = time.time()
-            self.metrics.record_idle('policy', idle_end - idle_start, t_start=idle_start, t_end=idle_end, request=req, replica_idx=0)
+            self.metrics.record_idle('policy', idle_end - idle_start)
             t1 = time.time()
-            req.latest_turn += 1
-            req.events.append('policy')
-            req.action = 'policy_action'
-            action, worker_idx = await self.policy_controller.step(req)
+            action = await self.policy_controller.step(data)
             t2 = time.time()
-            self.metrics.record('policy', t2 - t1, t_start=t1, t_end=t2, event_type="step", extra_args={"input": str(req.initial_prompt)}, request=req, replica_idx=worker_idx)
+            self.metrics.record('policy', t2 - t1)
             route = random.choice(["coding", "math", "judger", "preprocess"])
             if route == "coding":
                 await self.coding_verifier_queue.put((action, t0))
@@ -241,36 +179,30 @@ class PipelinedRunner:
         while not self.shutdown_event.is_set():
             idle_start = time.time()
             try:
-                req, t0 = await asyncio.wait_for(queue.get(), timeout=0.1)
+                action, t0 = await asyncio.wait_for(queue.get(), timeout=0.1)
             except asyncio.TimeoutError:
                 continue
             idle_end = time.time()
-            self.metrics.record_idle(metrics_name, idle_end - idle_start, t_start=idle_start, t_end=idle_end, request=req, replica_idx=0)
+            self.metrics.record_idle(metrics_name, idle_end - idle_start)
             t1 = time.time()
-            req.latest_turn += 1
-            req.events.append(metrics_name)
-            req.action = f'{metrics_name}_action'
-            verification, worker_idx = await controller.step(req)
+            verification = await controller.step(action)
             t2 = time.time()
-            self.metrics.record(metrics_name, t2 - t1, t_start=t1, t_end=t2, event_type="step", extra_args={"input": str(req.initial_prompt)}, request=req, replica_idx=worker_idx)
+            self.metrics.record(metrics_name, t2 - t1)
             await self.policy_queue.put((verification, t0))
 
     async def preprocess_loop(self):
         while not self.shutdown_event.is_set():
             idle_start = time.time()
             try:
-                req, t0 = await asyncio.wait_for(self.preprocess_queue.get(), timeout=0.1)
+                action, t0 = await asyncio.wait_for(self.preprocess_queue.get(), timeout=0.1)
             except asyncio.TimeoutError:
                 continue
             idle_end = time.time()
-            self.metrics.record_idle('preprocess', idle_end - idle_start, t_start=idle_start, t_end=idle_end, request=req, replica_idx=0)
+            self.metrics.record_idle('preprocess', idle_end - idle_start)
             t1 = time.time()
-            req.latest_turn += 1
-            req.events.append('preprocess')
-            req.action = 'preprocess_action'
-            preprocessed, worker_idx = await self.preprocess_controller.step(req)
+            preprocessed = await self.preprocess_controller.step(action)
             t2 = time.time()
-            self.metrics.record('preprocess', t2 - t1, t_start=t1, t_end=t2, event_type="step", extra_args={"input": str(req.initial_prompt)}, request=req, replica_idx=worker_idx)
+            self.metrics.record('preprocess', t2 - t1)
             await self.replay_buffer.put((preprocessed, t0))
 
     async def train_loop(self):
@@ -279,18 +211,15 @@ class PipelinedRunner:
             batch = []
             idle_start = time.time()
             for _ in range(self.config.batch_size):
-                req, t0 = await self.replay_buffer.get()
-                batch.append((req, t0))
+                preprocessed, t0 = await self.replay_buffer.get()
+                batch.append((preprocessed, t0))
             idle_end = time.time()
-            self.metrics.record_idle('trainer', idle_end - idle_start, t_start=idle_start, t_end=idle_end, request=batch[0][0] if batch else None, replica_idx=0)
+            self.metrics.record_idle('trainer', idle_end - idle_start)
             t1 = time.time()
             await asyncio.sleep(0.1)
             t2 = time.time()
-            for req, t0 in batch:
-                req.latest_turn += 1
-                req.events.append('trainer')
-                req.action = 'train_action'
-                self.metrics.record('trainer', t2 - t1, t_start=t1, t_end=t2, event_type="step", extra_args={}, request=req, replica_idx=0)
+            for _, t0 in batch:
+                self.metrics.record('trainer', t2 - t1)
             await self.weight_store.put("weights")
             steps += 1
         # Signal shutdown to all other loops
@@ -331,7 +260,7 @@ if __name__ == "__main__":
 
     # Example config (customize as needed)
     config = SimulationConfig(
-        num_policys=2,
+        num_policys=16,
         num_coding_verifiers=2,
         num_math_verifiers=2,
         num_llm_judge_judgers=1,
@@ -347,7 +276,6 @@ if __name__ == "__main__":
         llm_judge_judger_step_high=0.3,
         preprocess_step_low=0.05,
         preprocess_step_high=0.2,
-        trace_output="trace.json",
     )
 
     runner = PipelinedRunner(config)
@@ -379,9 +307,3 @@ if __name__ == "__main__":
     axs[2].set_title('Total Idle Time (s)')
     plt.tight_layout()
     plt.show()
-
-    # Write Perfetto trace
-    with open(config.trace_output, "w") as f:
-        json.dump({"traceEvents": runner.metrics.trace_events}, f)
-    print(f"Perfetto trace written to {os.path.abspath(config.trace_output)}")
-    print("To view, open https://ui.perfetto.dev and load the trace file.")
