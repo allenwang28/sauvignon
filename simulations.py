@@ -357,3 +357,10 @@ if __name__ == "__main__":
     axs[2].set_title('Total Idle Time (s)')
     plt.tight_layout()
     plt.show()
+
+    # Print summary table
+    print("\nComponent Summary:")
+    print(f"{'Component':>16} | {'Throughput (ev/s)':>16} | {'Avg Latency (s)':>16} | {'Idle Time (s)':>16}")
+    print("-" * 70)
+    for c in components:
+        print(f"{c:>16} | {throughput[components.index(c)]:>16.2f} | {avg_latency[components.index(c)]:>16.4f} | {idle_time[components.index(c)]:>16.2f}")
