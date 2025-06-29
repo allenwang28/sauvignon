@@ -303,7 +303,7 @@ if __name__ == "__main__":
         llm_judge_judger_step_high=0.3,
         preprocess_step_low=0.05,
         preprocess_step_high=0.2,
-        trace_output="trace.json",
+        trace_output="trace_pipeline.json",
     )
     prompts = [f"prompt_{i}" for i in range(config.max_steps * config.batch_size)]
     runner = MultiprocessingRunner(config)
