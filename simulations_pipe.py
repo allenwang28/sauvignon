@@ -285,14 +285,14 @@ class MultiprocessingRunner:
 
 if __name__ == "__main__":
     config = SimulationConfig(
-        num_policys=16,
+        num_policys=4,
         num_coding_verifiers=2,
         num_math_verifiers=2,
         num_llm_judge_judgers=1,
         num_preprocess=1,
-        num_prompt_loaders=2,
+        num_prompt_loaders=4,
         batch_size=4,
-        max_steps=2,
+        max_steps=20,
         policy_step_low=0.5,
         policy_step_high=1.0,
         coding_verifier_step_low=0.2,

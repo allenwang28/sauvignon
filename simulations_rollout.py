@@ -203,7 +203,7 @@ def main():
         num_llm_judge_judgers=1,
         num_envs=4,
         batch_size=4,
-        max_steps=2,
+        max_steps=20,
         policy_step_low=0.5,
         policy_step_high=1.0,
         coding_verifier_step_low=0.2,
