@@ -272,10 +272,24 @@ class RolloutRunner:
 
 # Worker function for each replica
 def worker_loop(input_queue, output_queue, trace_queue, component_name, worker_idx, step_low, step_high, policy_queue=None):
+    import os
     while True:
+        idle_start = time.time()
         item = input_queue.get()
+        idle_end = time.time()
         if item is None:
             break
+        # Emit idle event
+        idle_dur = idle_end - idle_start
+        trace_queue.put({
+            "name": f"{component_name}[{worker_idx}]::idle",
+            "ph": "X",
+            "ts": int(idle_start * 1e6),
+            "dur": int(idle_dur * 1e6),
+            "pid": os.getpid(),
+            "tid": worker_idx,
+            "args": {},
+        })
         req, t0 = item
         t1 = time.time()
         # Simulate work
@@ -305,11 +319,9 @@ def worker_loop(input_queue, output_queue, trace_queue, component_name, worker_i
             else:
                 output_queue["preprocess"].put((req, t0))
         elif component_name in ["coding_verifier", "math_verifier", "judger"]:
-            # Multi-turn: send back to policy
             policy_queue.put((req, t0))
         elif component_name == "preprocess":
             output_queue.put((req, t0))
-        # Trainer handled separately
 
 # Trainer worker (batches)
 def trainer_loop(input_queue, trace_queue, batch_size, max_steps):
@@ -432,6 +444,7 @@ class MultiprocessingRunner:
             json.dump({"traceEvents": traces}, f)
         print(f"Perfetto trace written to {os.path.abspath(self.config.trace_output)}")
         print("To view, open https://ui.perfetto.dev and load the trace file.")
+
 
 if __name__ == "__main__":
     config = SimulationConfig(
