@@ -6,6 +6,8 @@ import os
 from collections import defaultdict
 from simulations_util import DeepResearchRequest, SimulationConfig
 import matplotlib.pyplot as plt
+import sys
+import argparse
 
 
 def policy_worker(input_queue, trace_queue, component_name, worker_id, step_low, step_high, tid, verifier_queues, response_queues):
@@ -46,7 +48,7 @@ def policy_worker(input_queue, trace_queue, component_name, worker_id, step_low,
         verifier_queues[route].put((req, t2, req_id, rollout_id))
 
 
-def verifier_worker(input_queue, trace_queue, component_name, worker_id, step_low, step_high, tid, response_queues):
+def verifier_worker(input_queue, trace_queue, component_name, worker_id, step_low, step_high, tid, response_queues, max_steps):
     while True:
         idle_start = time.time()
         item = input_queue.get()
@@ -69,6 +71,8 @@ def verifier_worker(input_queue, trace_queue, component_name, worker_id, step_lo
         req.latest_turn += 1
         req.events.append(component_name)
         req.action = f'{component_name}_action'
+        # Simulate episode completion - done after max_steps or randomly
+        done = req.latest_turn >= max_steps or random.random() < 0.3  # 30% chance of early termination
         t2 = time.time()
         trace_queue.put({
             "name": f"{component_name}[{worker_id}]::step",
@@ -79,8 +83,8 @@ def verifier_worker(input_queue, trace_queue, component_name, worker_id, step_lo
             "tid": tid,
             "args": {"request": req.summary()},
         })
-        # Return to rollout via its response queue
-        response_queues[rollout_id].put((req, t2, req_id))
+        # Return to rollout via its response queue with done flag
+        response_queues[rollout_id].put((req, t2, req_id, done))
 
 
 def rollout_process(policy_queue, trace_queue, replay_buffer, prompts, rollout_id, config, tid, response_queue):
@@ -88,9 +92,9 @@ def rollout_process(policy_queue, trace_queue, replay_buffer, prompts, rollout_i
     for idx, prompt in enumerate(prompts):
         t0 = time.time()
         req = DeepResearchRequest(initial_prompt=prompt, rank=idx)
-        step_count = 0
+        done = False
         obs = prompt
-        while step_count < config.max_steps:
+        while not done:
             # Send to policy
             req_id = f"{rollout_id}_{idx}_{req.latest_turn}_{random.randint(0, 1e9)}"
             policy_queue.put((req, t0, req_id, rollout_id))
@@ -99,12 +103,12 @@ def rollout_process(policy_queue, trace_queue, replay_buffer, prompts, rollout_i
             # Collect responses until we find the matching one
             pending_responses = {}
             while req_id not in pending_responses:
-                resp_req, resp_t, resp_id = response_queue.get()
-                pending_responses[resp_id] = (resp_req, resp_t)
+                resp_req, resp_t, resp_id, resp_done = response_queue.get()
+                pending_responses[resp_id] = (resp_req, resp_t, resp_done)
                 if resp_id == req_id:
                     break
             
-            req2, t2 = pending_responses[req_id]
+            req2, t2, done = pending_responses[req_id]
             # Emit rollout step event
             t3 = time.time()
             trace_queue.put({
@@ -117,7 +121,6 @@ def rollout_process(policy_queue, trace_queue, replay_buffer, prompts, rollout_i
                 "args": {"request": req2.summary()},
             })
             trajectory.append((obs, req2.action))
-            step_count += 1
             obs = f"obs_{rollout_id}_{req2.latest_turn}"
             req = req2  # Use the updated request for next iteration
         
@@ -195,23 +198,28 @@ def metrics_from_trace(trace_events):
 
 
 def main():
+    parser = argparse.ArgumentParser(description='Rollout simulation')
+    parser.add_argument('--no-plots', action='store_true', help='Disable plotting')
+    parser.add_argument('--no-traces', action='store_true', help='Disable trace saving')
+    args = parser.parse_args()
+    
     print("Starting rollout simulation...")
     config = SimulationConfig(
-        num_policys=4,
+        num_policys=2,
         num_coding_verifiers=2,
         num_math_verifiers=2,
         num_llm_judge_judgers=1,
         num_envs=4,
         batch_size=4,
-        max_steps=20,
-        policy_step_low=0.5,
-        policy_step_high=1.0,
-        coding_verifier_step_low=0.2,
-        coding_verifier_step_high=0.5,
+        max_steps=3,
+        policy_step_low=1.,
+        policy_step_high=2.,
+        coding_verifier_step_low=2.,
+        coding_verifier_step_high=3.,
         math_verifier_step_low=0.3,
         math_verifier_step_high=0.7,
-        llm_judge_judger_step_low=0.1,
-        llm_judge_judger_step_high=0.3,
+        llm_judge_judger_step_low=1.,
+        llm_judge_judger_step_high=1.5,
         trace_output="trace_rollout.json",
     )
     prompts = [f"prompt_{i}" for i in range(config.num_envs * config.max_steps)]
@@ -242,13 +250,13 @@ def main():
     # Start verifier workers
     verifier_workers = []
     for i in range(config.num_coding_verifiers):
-        verifier_workers.append(mp.Process(target=verifier_worker, args=(verifier_queues["coding_verifier"], trace_queue, "coding_verifier", i, config.coding_verifier_step_low, config.coding_verifier_step_high, tid, response_queues)))
+        verifier_workers.append(mp.Process(target=verifier_worker, args=(verifier_queues["coding_verifier"], trace_queue, "coding_verifier", i, config.coding_verifier_step_low, config.coding_verifier_step_high, tid, response_queues, config.max_steps)))
         tid += 1
     for i in range(config.num_math_verifiers):
-        verifier_workers.append(mp.Process(target=verifier_worker, args=(verifier_queues["math_verifier"], trace_queue, "math_verifier", i, config.math_verifier_step_low, config.math_verifier_step_high, tid, response_queues)))
+        verifier_workers.append(mp.Process(target=verifier_worker, args=(verifier_queues["math_verifier"], trace_queue, "math_verifier", i, config.math_verifier_step_low, config.math_verifier_step_high, tid, response_queues, config.max_steps)))
         tid += 1
     for i in range(config.num_llm_judge_judgers):
-        verifier_workers.append(mp.Process(target=verifier_worker, args=(verifier_queues["judger"], trace_queue, "judger", i, config.llm_judge_judger_step_low, config.llm_judge_judger_step_high, tid, response_queues)))
+        verifier_workers.append(mp.Process(target=verifier_worker, args=(verifier_queues["judger"], trace_queue, "judger", i, config.llm_judge_judger_step_low, config.llm_judge_judger_step_high, tid, response_queues, config.max_steps)))
         tid += 1
     print(f"Starting {len(verifier_workers)} verifier workers")
     for w in verifier_workers:
@@ -300,10 +308,13 @@ def main():
     traces = []
     while not trace_queue.empty():
         traces.append(trace_queue.get())
-    with open(config.trace_output, "w") as f:
-        json.dump({"traceEvents": traces}, f)
-    print(f"Perfetto trace written to {os.path.abspath(config.trace_output)}")
-    print("To view, open https://ui.perfetto.dev and load the trace file.")
+    
+    # Only save traces if not disabled
+    if not args.no_traces:
+        with open(config.trace_output, "w") as f:
+            json.dump({"traceEvents": traces}, f)
+        print(f"Perfetto trace written to {os.path.abspath(config.trace_output)}")
+        print("To view, open https://ui.perfetto.dev and load the trace file.")
     
     # Print summary
     metrics = metrics_from_trace(traces)
@@ -317,15 +328,18 @@ def main():
         for c in components
     ]
     idle_time = [metrics[c]['idle_time'] for c in components]
-    fig, axs = plt.subplots(3, 1, figsize=(10, 8))
-    axs[0].bar(components, throughput)
-    axs[0].set_title('Throughput (events/sec)')
-    axs[1].bar(components, avg_latency)
-    axs[1].set_title('Average Latency (s)')
-    axs[2].bar(components, idle_time)
-    axs[2].set_title('Total Idle Time (s)')
-    plt.tight_layout()
-    plt.show()
+    
+    if not args.no_plots:
+        fig, axs = plt.subplots(3, 1, figsize=(10, 8))
+        axs[0].bar(components, throughput)
+        axs[0].set_title('Throughput (events/sec)')
+        axs[1].bar(components, avg_latency)
+        axs[1].set_title('Average Latency (s)')
+        axs[2].bar(components, idle_time)
+        axs[2].set_title('Total Idle Time (s)')
+        plt.tight_layout()
+        plt.show()
+    
     print("\nComponent Summary:")
     print(f"{'Component':>16} | {'Throughput (ev/s)':>16} | {'Avg Latency (s)':>16} | {'Idle Time (s)':>16}")
     print("-" * 70)

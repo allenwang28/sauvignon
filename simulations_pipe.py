@@ -12,6 +12,8 @@ import json
 import os
 from typing import List, Optional
 from collections import Counter
+import sys
+import argparse
 
 
 @dataclass
@@ -64,7 +66,7 @@ def worker_loop(input_queue, output_queue, trace_queue, component_name, worker_i
         idle_end = time.time()
         if item is None:
             break
-        # Emit idle event
+        # Only emit idle event if we got a real work item (not None)
         idle_dur = idle_end - idle_start
         trace_queue.put({
             "name": f"{component_name}[{worker_idx}]::idle",
@@ -111,11 +113,24 @@ def worker_loop(input_queue, output_queue, trace_queue, component_name, worker_i
 # Trainer worker (batches)
 def trainer_loop(input_queue, trace_queue, batch_size, max_steps, tid):
     steps = 0
-    while steps < max_steps:
+    timeout_counter = 0
+    max_timeout = 100  # Prevent infinite waiting
+    
+    while steps < max_steps and timeout_counter < max_timeout:
         batch = []
         idle_start = time.time()
+        
+        # Try to collect a batch, but don't wait forever
         for _ in range(batch_size):
-            item = input_queue.get()
+            try:
+                # Use a timeout for getting items
+                item = input_queue.get(timeout=5.0)  # 5 second timeout per item
+                timeout_counter = 0  # Reset timeout counter on successful get
+            except:
+                # Timeout occurred, increment counter and continue
+                timeout_counter += 1
+                break
+                
             idle_end = time.time()
             # Emit idle event for trainer
             idle_dur = idle_end - idle_start
@@ -133,23 +148,31 @@ def trainer_loop(input_queue, trace_queue, batch_size, max_steps, tid):
             req, t0 = item
             batch.append((req, t0))
             idle_start = time.time()  # For next idle period
-        t1 = time.time()
-        time.sleep(0.1)
-        t2 = time.time()
-        for req, t0 in batch:
-            req.latest_turn += 1
-            req.events.append('trainer')
-            req.action = 'train_action'
-            trace_queue.put({
-                "name": f"trainer[0]::step",
-                "ph": "X",
-                "ts": int(t1 * 1e6),
-                "dur": int((t2 - t1) * 1e6),
-                "pid": 1,
-                "tid": tid,
-                "args": {"request": req.summary()},
-            })
-        steps += 1
+        
+        # If we got a batch, process it
+        if batch:
+            t1 = time.time()
+            time.sleep(0.1)
+            t2 = time.time()
+            for req, t0 in batch:
+                req.latest_turn += 1
+                req.events.append('trainer')
+                req.action = 'train_action'
+                trace_queue.put({
+                    "name": f"trainer[0]::step",
+                    "ph": "X",
+                    "ts": int(t1 * 1e6),
+                    "dur": int((t2 - t1) * 1e6),
+                    "pid": 1,
+                    "tid": tid,
+                    "args": {"request": req.summary()},
+                })
+            steps += 1
+        else:
+            # No items in batch, wait a bit and try again
+            time.sleep(0.1)
+            timeout_counter += 1
+    
     # Signal done
     return
 
@@ -277,32 +300,39 @@ class MultiprocessingRunner:
         traces = []
         while not self.trace_queue.empty():
             traces.append(self.trace_queue.get())
-        with open(self.config.trace_output, "w") as f:
-            json.dump({"traceEvents": traces}, f)
-        print(f"Perfetto trace written to {os.path.abspath(self.config.trace_output)}")
-        print("To view, open https://ui.perfetto.dev and load the trace file.")
+        # Only save traces if not disabled
+        if not any('--no-traces' in arg for arg in sys.argv):
+            with open(self.config.trace_output, "w") as f:
+                json.dump({"traceEvents": traces}, f)
+            print(f"Perfetto trace written to {os.path.abspath(self.config.trace_output)}")
+            print("To view, open https://ui.perfetto.dev and load the trace file.")
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description='Pipeline simulation')
+    parser.add_argument('--no-plots', action='store_true', help='Disable plotting')
+    parser.add_argument('--no-traces', action='store_true', help='Disable trace saving')
+    args = parser.parse_args()
+    
     config = SimulationConfig(
-        num_policys=4,
+        num_policys=2,
         num_coding_verifiers=2,
         num_math_verifiers=2,
         num_llm_judge_judgers=1,
         num_preprocess=1,
         num_prompt_loaders=4,
         batch_size=4,
-        max_steps=20,
-        policy_step_low=0.5,
-        policy_step_high=1.0,
+        max_steps=3,
+        policy_step_low=1.,
+        policy_step_high=2.,
         coding_verifier_step_low=0.2,
         coding_verifier_step_high=0.5,
         math_verifier_step_low=0.3,
         math_verifier_step_high=0.7,
         llm_judge_judger_step_low=0.1,
         llm_judge_judger_step_high=0.3,
-        preprocess_step_low=0.05,
-        preprocess_step_high=0.2,
+        preprocess_step_low=0.,
+        preprocess_step_high=0.,
         trace_output="trace_pipeline.json",
     )
     prompts = [f"prompt_{i}" for i in range(config.max_steps * config.batch_size)]
@@ -311,7 +341,6 @@ if __name__ == "__main__":
         runner.run(prompts)
     except KeyboardInterrupt:
         print("\nSimulation stopped by user.")
-        import sys
         sys.exit(0)
 
     # Load trace and compute metrics
@@ -337,6 +366,10 @@ if __name__ == "__main__":
         trace_data = json.load(f)
     metrics = metrics_from_trace(trace_data['traceEvents'])
 
+    # Filter out prompt_loader from metrics since it's just initialization
+    if 'prompt_loader' in metrics:
+        del metrics['prompt_loader']
+
     components = list(metrics.keys())
     # Throughput: processed / (total active time)
     throughput = [
@@ -349,15 +382,16 @@ if __name__ == "__main__":
     ]
     idle_time = [metrics[c]['idle_time'] for c in components]
 
-    fig, axs = plt.subplots(3, 1, figsize=(10, 8))
-    axs[0].bar(components, throughput)
-    axs[0].set_title('Throughput (events/sec)')
-    axs[1].bar(components, avg_latency)
-    axs[1].set_title('Average Latency (s)')
-    axs[2].bar(components, idle_time)
-    axs[2].set_title('Total Idle Time (s)')
-    plt.tight_layout()
-    plt.show()
+    if not args.no_plots:
+        fig, axs = plt.subplots(3, 1, figsize=(10, 8))
+        axs[0].bar(components, throughput)
+        axs[0].set_title('Throughput (events/sec)')
+        axs[1].bar(components, avg_latency)
+        axs[1].set_title('Average Latency (s)')
+        axs[2].bar(components, idle_time)
+        axs[2].set_title('Total Idle Time (s)')
+        plt.tight_layout()
+        plt.show()
 
     # Print summary table
     print("\nComponent Summary:")
